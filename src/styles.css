@@ -1,3 +1,17 @@
+@font-face {
+    font-family: Neue-Montreal;
+    src: url(./assets/fonts/NeueMontreal-Medium.otf);
+}
+
+.neue-font {
+    font-family: 'Neue-Montreal';
+}
+
 p {
     margin: 0px 0px;
+}
+
+body {
+    margin: 0px 0px;
+    background: linear-gradient(14deg, #DBDBDB, #EEEEEE);
 }

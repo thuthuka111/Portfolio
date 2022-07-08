@@ -1,0 +1,127 @@
+.fake-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow-y: scroll;
+    font-family: 'Neue-Montreal';
+    height: 100vh;
+}
+
+.canvas-container {
+    width: 90vw;
+    height: 90vh;
+    background-color: burlywood;
+    border-right: solid burlywood 1rem;
+    border-top: solid burlywood 1rem;
+    position: relative;
+}
+
+.canvas-container>div {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(221, 151, 58);
+}
+
+.category-container {
+    position: relative;
+    min-width: 500px;
+    min-height: 400px;
+    background-color: rgba(255, 192, 203, 0.726);
+}
+
+.background-block {
+    position: absolute;
+    left: 3rem;
+    background-color: grey;
+    width: 50%;
+    height: 100%;
+}
+
+.content-block {
+    position: absolute;
+    top: 7rem;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 50%;
+}
+
+.topbar {
+    position: fixed;
+    top: 2rem;
+    width: 100vw;
+}
+
+.topbar>div {
+    font-size: 18pt;
+    font-family: 'Neue-Montreal';
+    padding: 0% 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-container {
+    text-transform: uppercase;
+    margin-top: 20vh;
+    /* 13% */
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftside {
+    width: 54%;
+    font-size: 59pt;
+}
+
+.rightside {
+    width: 40%;
+    font-size: 18pt;
+    text-align: center;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-image {
+    margin: 1.6rem 0rem;
+    height: 12rem;
+    width: 90%;
+    background-image: url(../assets/images/image.jpg);
+    background-position: center;
+}
+
+.more-below-containter {
+    position: relative;
+    width: 11vw;
+    height: 11vw;
+    margin-top: 32%;
+}
+
+.dashed-circle {
+    position: absolute;
+    border: dashed black 2px;
+    border-radius: 500px;
+    width: 100%;
+    height: 100%;
+}
+
+.down-arrow {
+    position: absolute;
+    clip-path: polygon(50% 90%, 95% 45%,
+            100% 50%,
+            50% 100%,
+            0% 50%, 5% 45%);
+    background-color: black;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+.more-below-containter > .arrow-text {
+    width: 100%;
+    height: 100%;
+    padding-top: 24%;
+}
