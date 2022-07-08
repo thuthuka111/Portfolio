@@ -1,0 +1,44 @@
+.sidebar-container {
+    position: fixed;
+    height: 100vh;
+    width: 30vw;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+}
+
+.sidebar {
+    padding: 3rem 0rem;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.sidebar>div {
+    width: 100%;
+    height: 1.7rem;
+    background-color: grey;
+    display: flex;
+}
+
+.bar {
+    padding: 10px 0px;
+    flex: 40%;
+}
+
+.bar>div {
+    background-color: white;
+    height: 100%;
+}
+
+.bar-text {
+    flex: 60%;
+    display: flex;
+    align-items: center;
+    font-size: 25pt;
+    color: white;
+}
