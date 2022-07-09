@@ -1,5 +1,3 @@
-
-
 .fake-body {
     display: flex;
     flex-direction: column;
@@ -8,6 +6,13 @@
     overflow-y: scroll;
     font-family: 'Neue-Montreal';
     height: 100vh;
+    scroll-behavior: smooth;
+}
+
+#prewindow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .canvas-container {
@@ -100,7 +105,7 @@
     height: 80%;
 }
 
-.more-below-containter > .arrow-text {
+.more-below-containter>.arrow-text {
     width: 100%;
     height: 100%;
     padding-top: 24%;
@@ -108,33 +113,59 @@
 
 .categories {
     margin-bottom: 27vh;
+    width: 80%;
+    flex-flow: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 7rem;
 }
 
-@media(max-width: 1073px) {/*lg*/
+category {
+    flex-basis: 40%;
+}
+
+.category-text {
+    position: absolute;
+    z-index: 2;
+    font-size: 50pt;
+    text-transform: uppercase;
+}
+
+@media(max-width: 1073px) {
+
+    /*lg*/
     .leftside {
-    	flex-basis: 54.33%;
+        flex-basis: 54.33%;
         font-size: 36pt;
     }
+
     .rightside {
-    	flex-basis: 40%;
+        flex-basis: 40%;
     }
+
     .more-below-containter {
         width: 20vw;
         height: 20vw;
     }
 }
-@media(max-width: 815px) {/*md*/
+
+@media(max-width: 815px) {
+
+    /*md*/
     .home-container {
         margin-top: 12vh;
         justify-content: center;
     }
-	.leftside {
-    	flex-basis: 100%;
+
+    .leftside {
+        flex-basis: 100%;
     }
+
     .rightside {
-    	flex-basis: 100%;
+        flex-basis: 100%;
         font-size: 15pt;
     }
+
     .more-below-containter {
         width: 30vw;
         height: 30vw;
