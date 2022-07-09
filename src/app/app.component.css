@@ -1,3 +1,5 @@
+
+
 .fake-body {
     display: flex;
     flex-direction: column;
@@ -23,29 +25,6 @@
     background-color: rgb(221, 151, 58);
 }
 
-.category-container {
-    position: relative;
-    min-width: 500px;
-    min-height: 400px;
-    background-color: rgba(255, 192, 203, 0.726);
-}
-
-.background-block {
-    position: absolute;
-    left: 3rem;
-    background-color: grey;
-    width: 50%;
-    height: 100%;
-}
-
-.content-block {
-    position: absolute;
-    top: 7rem;
-    background-color: whitesmoke;
-    width: 100%;
-    height: 50%;
-}
-
 .topbar {
     position: fixed;
     top: 2rem;
@@ -66,16 +45,17 @@
     /* 13% */
     width: 80%;
     display: flex;
+    flex-flow: wrap;
     justify-content: space-between;
 }
 
 .leftside {
-    width: 54%;
+    flex-basis: 54%;
     font-size: 59pt;
 }
 
 .rightside {
-    width: 40%;
+    flex-basis: 40%;
     font-size: 18pt;
     text-align: center;
     margin-top: 3rem;
@@ -124,4 +104,40 @@
     width: 100%;
     height: 100%;
     padding-top: 24%;
+}
+
+.categories {
+    margin-bottom: 27vh;
+}
+
+@media(max-width: 1073px) {/*lg*/
+    .leftside {
+    	flex-basis: 54.33%;
+        font-size: 36pt;
+    }
+    .rightside {
+    	flex-basis: 40%;
+    }
+    .more-below-containter {
+        width: 20vw;
+        height: 20vw;
+    }
+}
+@media(max-width: 815px) {/*md*/
+    .home-container {
+        margin-top: 12vh;
+        justify-content: center;
+    }
+	.leftside {
+    	flex-basis: 100%;
+    }
+    .rightside {
+    	flex-basis: 100%;
+        font-size: 15pt;
+    }
+    .more-below-containter {
+        width: 30vw;
+        height: 30vw;
+        margin-top: 13%;
+    }
 }
