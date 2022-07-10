@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
     let prewindowScrollHeight = document.getElementById("prewindow").scrollHeight;
     fakeBody.addEventListener("scroll", () => {
       if (fakeBody.scrollTop + window.innerHeight >= prewindowScrollHeight) {
-        document.getElementById("prewindow").scrollIntoView(true);
+        // document.getElementById("prewindow").scrollIntoView(true);
       }
     });
   }
