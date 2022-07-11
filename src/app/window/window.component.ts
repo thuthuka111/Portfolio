@@ -18,8 +18,8 @@ import {
         height: '100%',
       })),
       state('notInView', style({
-        width: '98%',
-        height: '95%',
+        width: '78%',
+        height: '75%',
       })),
       transition('inView <=> notInView', [
         animate('0.4s'),

@@ -10,46 +10,63 @@ export class AppComponent implements OnInit {
   fakeBody: HTMLElement;
 
   windowInView = 'prewindow';
-  webDesInView = false;
-  graphicDesInView = false;
-  webDevInView = false;
+  windows = [
+    { name: 'prewindow', inView: false },
+    { name: 'WebDesign', inView: false },
+    { name: 'GraphicDesign', inView: false },
+    { name: 'WebDevelopment', inView: false },
+  ];
+  windowMap = new Map();
+
   inScrollingMotion = false;
+
+  constructor() {
+    this.windowMap.set('prewindow', 0);
+    this.windowMap.set('wedDesignWindow', 1);
+    this.windowMap.set('graphicDesignWindow', 2);
+    this.windowMap.set('webDevWindow', 3);
+  }
 
   ngOnInit(): void {
     this.fakeBody = document.querySelector(".fake-body");
     let prewindowScrollHeight = document.getElementById("prewindow").scrollHeight;
-    let scrollTimeout: any;
-    let thissy = this;
 
     this.fakeBody.addEventListener("scroll", () => {
-      if (this.fakeBody.scrollTop + window.innerHeight >= prewindowScrollHeight) {
+      if (!this.inScrollingMotion && this.windowInView == 'prewindow' && this.fakeBody.scrollTop + window.innerHeight >= prewindowScrollHeight) {
         this.scrollTo('wedDesignWindow');
       }
     });
   }
 
   scrollTo(section: string): void {
-    this.windowInView = section;
+    // this.windowInView = section;
 
     if (!this.inScrollingMotion) {
       this.inScrollingMotion = true;
-      
-      // set the current window to notInView
 
-      $('#fakeBody').animate({
-        scrollTop: document.getElementById(section).offsetTop
-      }, 600, 'swing', () => {
-        setTimeout(() => {
-          this.inScrollingMotion = false;
-          
-          if (section !== 'prewindow')
-            this.fakeBody.classList.add('disable-scrolling');
-          else
-            this.fakeBody.classList.remove('disable-scrolling');
+      // set the current window to notInView
+      this.windows[this.windowMap.get(this.windowInView)].inView = false;
+
+      setTimeout(() => {// allow window to collapse
+        $('#fakeBody').animate({
+          scrollTop: document.getElementById(section).offsetTop
+        }, 700, 'swing', () => {
+          setTimeout(() => {
+            console.log("entering " + section);
+            this.inScrollingMotion = false;
+
+            if (section !== 'prewindow')
+              this.fakeBody.classList.add('disable-scrolling');
+            else
+              this.fakeBody.classList.remove('disable-scrolling');
 
             // set the current window to inView
-        }, 600);
-      });
+            this.windows[this.windowMap.get(section)].inView = true;
+            this.windowInView = section;
+          }, 300);
+        });
+      }, 400);
+
     }
   }
 

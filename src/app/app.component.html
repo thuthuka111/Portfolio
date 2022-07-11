@@ -51,16 +51,16 @@
   </div>
 
   <div class="windows" id="windows">
-    <window id="wedDesignWindow" [view]="webDesInView" name="WebDesign" backgroundClass="brown-background"
+    <window id="wedDesignWindow" [view]="windows[1].inView" name="WebDesign" backgroundClass="brown-background"
       [scrolling]="true" (hitBottom)="scrollTo('graphicDesignWindow')" (hitTop)="scrollTo('prewindow')">
       <web-design></web-design>
     </window>
-    <window id="graphicDesignWindow" [view]="graphicDesInView" name="GraphicDesign"
+    <window id="graphicDesignWindow" [view]="windows[2].inView" name="GraphicDesign"
       backgroundClass="pastelle-background" [scrolling]="true" (hitBottom)="scrollTo('webDevWindow')"
       (hitTop)="scrollTo('wedDesignWindow')">
       <graphic-design></graphic-design>
     </window>
-    <window id="webDevWindow" [view]="webDevInView" name="WebDesign" backgroundClass="grey-background"
+    <window id="webDevWindow" [view]="windows[3].inView" name="WebDevelopment" backgroundClass="grey-background"
       [scrolling]="true" (hitBottom)="scrollTo('prewindow')" (hitTop)="scrollTo('graphicDesignWindow')">
       <web-dev></web-dev>
     </window>
