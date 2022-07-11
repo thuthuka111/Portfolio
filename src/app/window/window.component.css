@@ -1,7 +1,7 @@
 .window-container {
     position: relative;
-    width: 98%;
-    height: 95%;
+    /* width: 98%;
+    height: 95%; */
 }
 
 .fake-border {
@@ -17,4 +17,22 @@
     left: 0px;
     width: 99%;
     height: 98%;
+}
+
+.container {
+    background-size: cover;
+    background-position: center;
+    overflow-y: scroll;
+}
+
+.brown-background {
+    background-image: url(../../assets/images/Noisy-Gradient.png);
+}
+
+.pastelle-background {
+    background-image: url(../../assets/images/Pastelle-Noisy-Gradient.png);
+}
+
+.grey-background {
+    background-image: url(../../assets/images/Grey-Noisy-Gradient.png);
 }

@@ -1,6 +1,6 @@
-<div class="window-container">
+<div [@isInView]="isInView ? 'inView' : 'notInView'" class="window-container">
     <div class="fake-border"></div>
-    <div class="window-content">
+    <div [id]="name + '-container'" [class]="'window-content container ' + backgroundClass" (scroll)="checkScrollHit()">
         <ng-content></ng-content>
     </div>
 </div>

@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div class="fake-body">
+<div id="fakeBody" class="fake-body">
 
   <div id="prewindow">
     <div class="home-container">
@@ -35,13 +35,13 @@
     </div>
 
     <div class="categories">
-      <category>
-        <div class="category-text">graphic design</div>
-      </category>
-      <category>
+      <category (click)="scrollTo('wedDesignWindow')">
         <div class="category-text">web design</div>
       </category>
-      <category>
+      <category (click)="scrollTo('graphicDesignWindow')">
+        <div class="category-text">graphic design</div>
+      </category>
+      <category (click)="scrollTo('webDevWindow')">
         <div class="category-text">web development</div>
       </category>
       <category>
@@ -51,16 +51,20 @@
   </div>
 
   <div class="windows" id="windows">
-    <window>
+    <window id="wedDesignWindow" [view]="webDesInView" name="WebDesign" backgroundClass="brown-background"
+      [scrolling]="true" (hitBottom)="scrollTo('graphicDesignWindow')" (hitTop)="scrollTo('prewindow')">
       <web-design></web-design>
     </window>
-    <window>
+    <window id="graphicDesignWindow" [view]="graphicDesInView" name="GraphicDesign"
+      backgroundClass="pastelle-background" [scrolling]="true" (hitBottom)="scrollTo('webDevWindow')"
+      (hitTop)="scrollTo('wedDesignWindow')">
       <graphic-design></graphic-design>
     </window>
-    <window>
+    <window id="webDevWindow" [view]="webDevInView" name="WebDesign" backgroundClass="grey-background"
+      [scrolling]="true" (hitBottom)="scrollTo('prewindow')" (hitTop)="scrollTo('graphicDesignWindow')">
       <web-dev></web-dev>
     </window>
-    <window></window>
+    <window [view]="false"></window>
   </div>
 
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'web-design',
@@ -11,5 +11,4 @@ export class WebDesignComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

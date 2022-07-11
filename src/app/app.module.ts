@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import {  WindowsModule } from './windows/windows.module'
@@ -17,6 +18,7 @@ import { WindowComponent } from './window/window.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     WindowsModule,
   ],
   providers: [],

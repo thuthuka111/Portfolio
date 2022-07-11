@@ -15,3 +15,7 @@ body {
     margin: 0px 0px;
     background: linear-gradient(14deg, #DBDBDB, #EEEEEE);
 }
+
+.disable-scrolling {
+    overflow: hidden !important;
+}

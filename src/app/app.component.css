@@ -3,10 +3,9 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    overflow-y: scroll;
     font-family: 'Neue-Montreal';
     height: 100vh;
-    scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 #prewindow {
