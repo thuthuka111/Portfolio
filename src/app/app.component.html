@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div id="fakeBody" class="fake-body">
+<div id="fakeBody" [class]="'fake-body' + (windows[0].scrolling ? '' : ' disable-scrolling')">
 
   <div id="prewindow">
     <div class="home-container">
@@ -52,16 +52,16 @@
 
   <div class="windows" id="windows">
     <window id="wedDesignWindow" [view]="windows[1].inView" name="WebDesign" backgroundClass="brown-background"
-      [scrolling]="true" (hitBottom)="scrollTo('graphicDesignWindow')" (hitTop)="scrollTo('prewindow')">
+      [scrolling]="windows[1].scrolling" (hitBottom)="scrollTo('graphicDesignWindow')" (hitTop)="scrollTo('prewindow')">
       <web-design></web-design>
     </window>
     <window id="graphicDesignWindow" [view]="windows[2].inView" name="GraphicDesign"
-      backgroundClass="pastelle-background" [scrolling]="true" (hitBottom)="scrollTo('webDevWindow')"
+      backgroundClass="pastelle-background" [scrolling]="windows[2].scrolling" (hitBottom)="scrollTo('webDevWindow')"
       (hitTop)="scrollTo('wedDesignWindow')">
       <graphic-design></graphic-design>
     </window>
     <window id="webDevWindow" [view]="windows[3].inView" name="WebDevelopment" backgroundClass="grey-background"
-      [scrolling]="true" (hitBottom)="scrollTo('prewindow')" (hitTop)="scrollTo('graphicDesignWindow')">
+      [scrolling]="windows[3].scrolling" (hitBottom)="scrollTo('prewindow')" (hitTop)="scrollTo('graphicDesignWindow')">
       <web-dev></web-dev>
     </window>
     <window [view]="false"></window>

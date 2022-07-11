@@ -32,15 +32,7 @@ export class WindowComponent implements OnInit {
   @Input('view') isInView: boolean;// make string that can be 4 things
   @Input() name: string
   @Input() backgroundClass: string;
-  @Input('scrolling') set setter(value: boolean) {
-    if (document.getElementById(this.name + '-container')) {
-      if (value) {
-        document.getElementById(this.name + '-container').classList.remove('disable-scrolling');
-      } else {
-        document.getElementById(this.name + '-container').classList.add('disable-scrolling');
-      }
-    }
-  }
+  @Input() scrolling: boolean = false;
 
   @Output() hitTop = new EventEmitter<void>();
   @Output() hitBottom = new EventEmitter<void>();

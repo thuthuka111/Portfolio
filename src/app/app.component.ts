@@ -11,10 +11,10 @@ export class AppComponent implements OnInit {
 
   windowInView = 'prewindow';
   windows = [
-    { name: 'prewindow', inView: false },
-    { name: 'WebDesign', inView: false },
-    { name: 'GraphicDesign', inView: false },
-    { name: 'WebDevelopment', inView: false },
+    { name: 'prewindow', inView: false, scrolling: true },
+    { name: 'WebDesign', inView: false, scrolling: false },
+    { name: 'GraphicDesign', inView: false, scrolling: false },
+    { name: 'WebDevelopment', inView: false, scrolling: false },
   ];
   windowMap = new Map();
 
@@ -46,6 +46,7 @@ export class AppComponent implements OnInit {
 
       // set the current window to notInView
       this.windows[this.windowMap.get(this.windowInView)].inView = false;
+      this.windows[this.windowMap.get(this.windowInView)].scrolling = false;
 
       setTimeout(() => {// allow window to collapse
         $('#fakeBody').animate({
@@ -55,13 +56,10 @@ export class AppComponent implements OnInit {
             console.log("entering " + section);
             this.inScrollingMotion = false;
 
-            if (section !== 'prewindow')
-              this.fakeBody.classList.add('disable-scrolling');
-            else
-              this.fakeBody.classList.remove('disable-scrolling');
-
             // set the current window to inView
             this.windows[this.windowMap.get(section)].inView = true;
+            this.windows[this.windowMap.get(section)].scrolling = true;
+
             this.windowInView = section;
           }, 300);
         });
