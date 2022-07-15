@@ -37,6 +37,9 @@ export class WindowComponent implements OnInit {
   @Output() hitTop = new EventEmitter<void>();
   @Output() hitBottom = new EventEmitter<void>();
 
+  atTop = true;
+  atBottom = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -46,11 +49,21 @@ export class WindowComponent implements OnInit {
     let eventElement = document.getElementById(`${this.name}-container`);
     if (eventElement.scrollTop + eventElement.clientHeight >= eventElement.scrollHeight - 5) { // close enough to bottom
       // HIT BOTTOM!
-      this.hitBottom.emit();
+      if (this.atBottom)
+        this.atBottom = false;
+      else {
+        this.hitBottom.emit();
+        this.atBottom = true;
+      }
 
     } else if (eventElement.scrollTop == 0) {
       // HIT TOP!
-      this.hitTop.emit();
+      if (this.atTop)
+        this.atTop = false;
+      else {
+        this.hitTop.emit();
+        this.atTop = true;
+      }
     }
   }
 }
