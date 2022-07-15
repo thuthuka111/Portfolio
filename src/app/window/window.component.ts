@@ -5,6 +5,9 @@ import {
   style,
   animate,
   transition,
+  group,
+  query,
+  animateChild,
 } from '@angular/animations';
 
 @Component({
@@ -22,7 +25,10 @@ import {
         height: '75%',
       })),
       transition('inView <=> notInView', [
-        animate('0.3s ease-in-out'),
+        group([
+          query('@content', animateChild()),
+          animate('0.3s ease-in-out'),
+        ]),
       ]),
     ]),
     trigger('content', [
@@ -82,6 +88,7 @@ export class WindowComponent implements OnInit {
       if (this.atBottom)
         this.atBottom = false;
       else {
+        this.contentState = "above";
         this.hitBottom.emit();
         this.atBottom = true;
       }
@@ -91,6 +98,7 @@ export class WindowComponent implements OnInit {
       if (this.atTop)
         this.atTop = false;
       else {
+        this.contentState = "below";
         this.hitTop.emit();
         this.atTop = true;
       }
@@ -98,7 +106,7 @@ export class WindowComponent implements OnInit {
   }
 
   stateChange(): void {
-    if(this.stateSet) {
+    if (this.isInView) {
       this.contentState = "inView";
     } else {
       this.stateSet = true;
