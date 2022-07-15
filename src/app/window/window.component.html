@@ -1,6 +1,7 @@
-<div [@isInView]="isInView ? 'inView' : 'notInView'" class="window-container">
+<div [@isInView]="isInView ? 'inView' : 'notInView'" class="window-container" (@isInView.start)="stateChange()">
     <div class="fake-border"></div>
-    <div [id]="name + '-container'" [class]="'window-content container ' + backgroundClass + (scrolling ? '' : ' disable-scrolling')" (wheel)="checkScrollHit()">
+    <div [class]="'window-content container ' + backgroundClass"></div>
+    <div [id]="name + '-container'" [@content]="contentState" [class]="'window-content container ' + (scrolling ? '' : ' disable-scrolling')" (wheel)="checkScrollHit()">
         <ng-content></ng-content>
     </div>
 </div>

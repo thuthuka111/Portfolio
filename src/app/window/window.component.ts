@@ -25,7 +25,34 @@ import {
         animate('0.3s ease-in-out'),
       ]),
     ]),
-
+    trigger('content', [
+      state('inView', style({
+        transform: 'translateY(0)',
+        opacity: '100%',
+      })),
+      state('above', style({
+        opacity: '0%',
+      })),
+      state('below', style({
+        opacity: '0%',
+      })),
+      transition('below => inView', [
+        style({ transform: 'translateY(13%)' }),
+        animate('0.5s ease-in'),
+      ]),
+      transition('above => inView', [
+        style({ transform: 'translateY(-13%)' }),
+        animate('0.5s ease-in'),
+      ]),
+      transition('inView => below', [
+        style({ transform: 'translateY(-13%)' }),
+        animate('0.5s ease-out'),
+      ]),
+      transition('inView => above', [
+        style({ transform: 'translateY(13%)' }),
+        animate('0.5s ease-out'),
+      ]),
+    ]),
   ]
 })
 export class WindowComponent implements OnInit {
@@ -36,6 +63,9 @@ export class WindowComponent implements OnInit {
 
   @Output() hitTop = new EventEmitter<void>();
   @Output() hitBottom = new EventEmitter<void>();
+
+  contentState = "below";
+  stateSet = false;
 
   atTop = true;
   atBottom = false;
@@ -64,6 +94,14 @@ export class WindowComponent implements OnInit {
         this.hitTop.emit();
         this.atTop = true;
       }
+    }
+  }
+
+  stateChange(): void {
+    if(this.stateSet) {
+      this.contentState = "inView";
+    } else {
+      this.stateSet = true;
     }
   }
 }
