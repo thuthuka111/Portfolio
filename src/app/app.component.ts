@@ -25,10 +25,16 @@ export class AppComponent implements OnInit {
     this.windowMap.set('wedDesignWindow', 1);
     this.windowMap.set('graphicDesignWindow', 2);
     this.windowMap.set('webDevWindow', 3);
+    $.extend($.easing, {
+      easeInOutQuint: function (x, t, b, c, d) {
+        if ((t /= d / 2) < 1) return c / 2 * t * t * t * t * t + b;
+        return c / 2 * ((t -= 2) * t * t * t * t + 2) + b;
+      }
+    });
   }
 
   ngOnInit(): void {
-    this.fakeBody = document.querySelector(".fake-body");
+    this.fakeBody = document.getElementById('fakeBody');
     let prewindowScrollHeight = document.getElementById("prewindow").scrollHeight;
 
     this.fakeBody.addEventListener("scroll", () => {
@@ -51,19 +57,20 @@ export class AppComponent implements OnInit {
       setTimeout(() => {// allow window to collapse
         $('#fakeBody').animate({
           scrollTop: document.getElementById(section).offsetTop
-        }, 700, 'swing', () => {
-          setTimeout(() => {
-            console.log("entering " + section);
-            this.inScrollingMotion = false;
+        }, 700, 'easeInOutQuint', () => {
 
-            // set the current window to inView
-            this.windows[this.windowMap.get(section)].inView = true;
-            this.windows[this.windowMap.get(section)].scrolling = true;
-
-            this.windowInView = section;
-          }, 300);
         });
-      }, 400);
+        setTimeout(() => {
+          console.log("entering " + section);
+          this.inScrollingMotion = false;
+
+          // set the current window to inView
+          this.windows[this.windowMap.get(section)].inView = true;
+          this.windows[this.windowMap.get(section)].scrolling = true;
+
+          this.windowInView = section;
+        }, 350);
+      }, 200);
 
     }
   }

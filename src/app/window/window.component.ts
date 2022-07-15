@@ -22,7 +22,7 @@ import {
         height: '75%',
       })),
       transition('inView <=> notInView', [
-        animate('0.4s'),
+        animate('0.3s ease-in-out'),
       ]),
     ]),
 
