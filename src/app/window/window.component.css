@@ -23,6 +23,22 @@
     background-size: cover;
     background-position: center;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* .BodyDiv::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+} */
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #43434336;
+    border-radius: 1rem;
 }
 
 .brown-background {

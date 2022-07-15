@@ -3,6 +3,16 @@
     src: url(./assets/fonts/NeueMontreal-Medium.otf);
 }
 
+@font-face {
+    font-family: Segoe-UI;
+    src: url(./assets/fonts/Segoe-UI.ttf);
+}
+
+@font-face {
+    font-family: Segoe-UI-Italic;
+    src: url(./assets/fonts/Segoe-UI-Italic.ttf);
+}
+
 .neue-font {
     font-family: 'Neue-Montreal';
 }
