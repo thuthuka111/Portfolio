@@ -58,17 +58,16 @@ export class AppComponent implements OnInit {
         $('#fakeBody').animate({
           scrollTop: document.getElementById(section).offsetTop
         }, 700, 'easeInOutQuint', () => {
-
+          this.windowInView = section;
+          this.inScrollingMotion = false;
         });
         setTimeout(() => {
           console.log("entering " + section);
-          this.inScrollingMotion = false;
 
           // set the current window to inView
           this.windows[this.windowMap.get(section)].inView = true;
           this.windows[this.windowMap.get(section)].scrolling = true;
 
-          this.windowInView = section;
         }, 350);
       }, 200);
 
