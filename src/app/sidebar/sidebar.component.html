@@ -1,16 +1,12 @@
 <div class="sidebar-container">
-    <div class="sidebar">
-      <div>
-        <div class="bar">
-          <div></div>
-        </div>
-        <div class="bar-text">
-          <p>HOME</p>
-        </div>
+  <div class="sidebar">
+    <div *ngFor="let window of windows">
+      <div [@isExtended]="window.inView ? 'extended' : 'collapsed'" class="bar">
+        <div (click)="scrollTo(window)" [@backgroundColour]="theme" ></div>
       </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <!-- <div @textDisplayed *ngIf="window.inView" class="bar-text">
+        <p>{{window.name}}</p>
+      </div> -->
     </div>
   </div>
+</div>

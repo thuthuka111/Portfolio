@@ -11,10 +11,10 @@ export class AppComponent implements OnInit {
 
   windowInView = 'prewindow';
   windows = [
-    { name: 'prewindow', inView: false, scrolling: true },
-    { name: 'WebDesign', inView: false, scrolling: false },
-    { name: 'GraphicDesign', inView: false, scrolling: false },
-    { name: 'WebDevelopment', inView: false, scrolling: false },
+    { name: 'home', inView: true, scrolling: true, id: "prewindow" },
+    { name: 'Web Design', inView: false, scrolling: false, id: "wedDesignWindow" },
+    { name: 'Graphic Design', inView: false, scrolling: false, id: "graphicDesignWindow" },
+    { name: 'Web Development', inView: false, scrolling: false, id: "webDevWindow" },
   ];
   windowMap = new Map();
 
