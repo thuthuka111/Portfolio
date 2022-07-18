@@ -65,6 +65,7 @@ export class WindowComponent implements AfterViewInit {
   @Input('view') isInView: boolean;// make string that can be 4 things
   @Input() name: string
   @Input() backgroundClass: string;
+  @Input() borderColor: string;
   @Input() scrolling: boolean = false;
 
   @Output() hitTop = new EventEmitter<void>();
