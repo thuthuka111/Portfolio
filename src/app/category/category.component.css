@@ -14,8 +14,8 @@
 }
 
 .background-block > div {
-    background-color: grey;
-    width: 50%;
+    background: linear-gradient(16deg, #262626, #616161);
+    width: 59%;
     height: 100%;
 }
 

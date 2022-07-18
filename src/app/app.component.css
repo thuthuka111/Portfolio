@@ -90,6 +90,7 @@
     border-radius: 500px;
     width: 100%;
     height: 100%;
+    box-shadow: 3px 6px 10px 0px #28282866;
 }
 
 .down-arrow {
@@ -127,7 +128,7 @@ category {
 .category-text {
     position: absolute;
     z-index: 2;
-    font-size: 50pt;
+    font-size: 48pt;
     text-transform: uppercase;
 }
 
