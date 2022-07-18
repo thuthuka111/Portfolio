@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   trigger,
   state,
@@ -61,7 +61,7 @@ import {
     ]),
   ]
 })
-export class WindowComponent implements OnInit {
+export class WindowComponent implements AfterViewInit {
   @Input('view') isInView: boolean;// make string that can be 4 things
   @Input() name: string
   @Input() backgroundClass: string;
@@ -73,36 +73,27 @@ export class WindowComponent implements OnInit {
   contentState = "below";
   stateSet = false;
 
-  atTop = true;
-  atBottom = false;
-
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
-  checkScrollHit(): void {
+  ngAfterViewInit(): void {
     let eventElement = document.getElementById(`${this.name}-container`);
-    if (eventElement.scrollTop + eventElement.clientHeight >= eventElement.scrollHeight - 5) { // close enough to bottom
-      // HIT BOTTOM!
-      if (this.atBottom)
-        this.atBottom = false;
-      else {
-        this.contentState = "above";
-        this.hitBottom.emit();
-        this.atBottom = true;
-      }
+    let timer;
+    let thissy = this;
 
-    } else if (eventElement.scrollTop == 0) {
-      // HIT TOP!
-      if (this.atTop)
-        this.atTop = false;
-      else {
-        this.contentState = "below";
-        this.hitTop.emit();
-        this.atTop = true;
-      }
-    }
+    eventElement.addEventListener('wheel', () => {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        if (eventElement.scrollTop == 0) {
+          thissy.contentState = "below";
+          thissy.hitTop.emit();
+        }
+        if (eventElement.scrollTop + eventElement.clientHeight >= eventElement.scrollHeight - 5) {
+          thissy.contentState = "above";
+          thissy.hitBottom.emit();
+        }
+      }, 250);
+
+    });
   }
 
   stateChange(): void {
