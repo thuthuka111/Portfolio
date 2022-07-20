@@ -1,2 +1,31 @@
 <p class="title">Web Development</p>
+<div class="dev-container">
+    <div class="skillset">
+        <p>Skill Set</p>
+        <div class="skill-display" *ngFor="let i of [1, 2, 3, 4]">
+            <div class="skill-icon"></div>
+            <div class="skill-body">
+                <div class="skill-text">
+                    <p>JavaScript</p>
+                    <p>60%</p>
+                </div>
+                <div class="skill-bar"></div>
+            </div>
+        </div>
+    </div>
+    <div class="projects-container">
+        <p class="project-fluff">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+            optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+            obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+            nihil, eveniet aliquid culpa officia au</p>
+        <div class="projects">
+            <div class="project" *ngFor="let i of [1, 2]">
+                <p>Project Title</p>
+                <div class="project-image"></div>
+            </div>
+        </div>
+    </div>
+</div>
 <div style="height: 120vh;"></div>

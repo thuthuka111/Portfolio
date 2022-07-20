@@ -3,3 +3,92 @@
     color: #FFFFFF;
     font-size: 120pt;
 }
+
+.dev-container {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.skillset {
+    flex-basis: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+}
+
+.skillset>p {
+    font-size: 36pt;
+}
+
+.skill-display {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24pt;
+}
+
+.skill-icon {
+    height: 100%;
+    flex-basis: 18%;
+    flex-basis: 18%;
+    background-color: blue;
+}
+
+.skill-body {
+    flex-basis: 79%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.skill-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-bar {
+    background-color: red;
+    height: 0.6rem;
+}
+
+.projects-container {
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    gap: 4rem;
+    color: white;
+}
+
+.project-fluff {
+    text-align: center;
+    font-size: 19pt;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.project>p {
+    font-size: 23pt;
+}
+
+.project-image {
+    background: #697176;
+    height: 30vh;
+    width: 42vh;
+}
