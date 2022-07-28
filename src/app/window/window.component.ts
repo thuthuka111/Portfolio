@@ -92,7 +92,7 @@ export class WindowComponent implements AfterViewInit {
           thissy.contentState = "above";
           thissy.hitBottom.emit();
         }
-      }, 250);
+      }, 130);
 
     });
   }

@@ -130,6 +130,7 @@ category {
     z-index: 2;
     font-size: 48pt;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .windows {

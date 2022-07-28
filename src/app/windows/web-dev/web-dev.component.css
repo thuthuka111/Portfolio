@@ -2,6 +2,7 @@
     font-family: Segoe-UI;
     color: #FFFFFF;
     font-size: 120pt;
+    text-align: center;
 }
 
 .dev-container {
@@ -34,7 +35,13 @@
     height: 100%;
     flex-basis: 18%;
     flex-basis: 18%;
-    background-color: blue;
+    /* background-color: blue; */
+    background-position: center;
+    background-size: cover;
+}
+
+.js-icon {
+    background-image: url(../../../assets/logos/JS_logo.png);
 }
 
 .skill-body {
@@ -50,8 +57,18 @@
 }
 
 .skill-bar {
-    background-color: red;
+    background-color: #ffffff54;
     height: 0.6rem;
+    position: relative;
+}
+
+.skill-bar-percent {
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    top: 0px;
+    width: 59%;
+    background: white;
 }
 
 .projects-container {
