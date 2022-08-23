@@ -2,11 +2,11 @@
 <div class="dev-container">
     <div class="skillset">
         <p>Skill Set</p>
-        <div class="skill-display" *ngFor="let i of [1, 2, 3, 4]">
+        <div class="skill-display" *ngFor="let skill of ['Javascript', 'HTML & CSS', 'Git', 'OpenGL', 'Angular', 'Cloudflare', 'Firebase', 'PHP', 'Node.js', 'MySQL', 'MongoDB', 'NGINX']">
             <div class="skill-icon js-icon"></div>
             <div class="skill-body">
                 <div class="skill-text">
-                    <p>JavaScript</p>
+                    <p>{{skill}}</p>
                     <p>4 years</p>
                 </div>
                 <div class="skill-bar">
@@ -16,15 +16,39 @@
         </div>
     </div>
     <div class="projects-container">
-        <p class="project-fluff">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+        <!-- <p class="project-fluff">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
             molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
             numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
             optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
             obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
-            nihil, eveniet aliquid culpa officia au</p>
+            nihil, eveniet aliquid culpa officia au</p> -->
+        <p class="project-fluff">It has been 4 years since rented my first web server. I didnt know how to code HTML,
+            javascript or how to serve a file
+            In Hindsight it was'nt the best purchasing desicion for the skillset I had at the time. Since then i have
+            learned store data on SQL/NoSQL dataabases.
+            I have learned Transmittion Protocols, all in the effort to serve website Files and API's.
+        </p>
+        <p class="project-fluff">
+            I'm not stuck in the past though, where there is no need for self-hosting a service, a cloud service will
+            do.
+            I have used Google Firebase to handle things such as user authentication and distributed messanging, and
+            have used Cloudflare to cache static files so that content is served to the user faster
+        </p>
         <div class="projects">
-            <div class="project" *ngFor="let i of [1, 2]">
-                <p>Project Title</p>
+            <div class="project">
+                <p>Waitless Digital menus</p>
+                <div class="project-image"></div>
+            </div>
+            <div class="project">
+                <p>Property Scraper</p>
+                <div class="project-image"></div>
+            </div>
+            <div class="project">
+                <p>Faade Event Finder</p>
+                <div class="project-image"></div>
+            </div>
+            <div class="project">
+                <p>Waitless Digital Menu CMS</p>
                 <div class="project-image"></div>
             </div>
         </div>
