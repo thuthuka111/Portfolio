@@ -2,15 +2,15 @@
 <div class="dev-container">
     <div class="skillset">
         <p>Skill Set</p>
-        <div class="skill-display" *ngFor="let skill of ['Javascript', 'HTML & CSS', 'Git', 'OpenGL', 'Angular', 'Cloudflare', 'Firebase', 'PHP', 'Node.js', 'MySQL', 'MongoDB', 'NGINX']">
-            <div class="skill-icon js-icon"></div>
+        <div class="skill-display" *ngFor="let skill of skillset">
+            <div class="skill-icon" [style]="'background-image: url(' + skill.icon + ');'"></div>
             <div class="skill-body">
                 <div class="skill-text">
-                    <p>{{skill}}</p>
-                    <p>4 years</p>
+                    <p>{{skill.name}}</p>
+                    <p>{{skill.experience}}</p>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-bar-percent"></div>
+                    <div class="skill-bar-percent" [style]="'width: ' + skill.barPercent + '%;'"></div>
                 </div>
             </div>
         </div>
@@ -35,21 +35,44 @@
             have used Cloudflare to cache static files so that content is served to the user faster
         </p>
         <div class="projects">
-            <div class="project">
+            Projects
+            <!-- <div class="project">
                 <p>Waitless Digital menus</p>
                 <div class="project-image"></div>
-            </div>
+            </div> -->
             <div class="project">
                 <p>Property Scraper</p>
-                <div class="project-image"></div>
+                <div class="project-image">
+                    <div class="project-text">
+                        <p>Mobile Application that sends push notifications to me when new properties are listed
+                            on popular
+                            property website</p>
+                        <p>Uses NoSQL database</p>
+                        <p>Uses Google Firebase cloud for notifications</p>
+                        <p>Backend on Python and Node.js</p>
+                    </div>
+
+                </div>
             </div>
             <div class="project">
                 <p>Faade Event Finder</p>
-                <div class="project-image"></div>
+                <div class="project-image">
+                    <div class="project-text">
+                        <p>Web Application to find events that are happening around</p>
+                        <p>Angular Frontend</p>
+                        <p>Node.js Backend</p>
+                        <p>MySQL database</p>
+                    </div>
+
+                </div>
             </div>
             <div class="project">
                 <p>Waitless Digital Menu CMS</p>
-                <div class="project-image"></div>
+                <div class="project-image">
+                    <div class="project-text">
+                        <p>Content Management System for managing The availabily of items on menus and specials</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
