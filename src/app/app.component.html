@@ -2,7 +2,7 @@
 <div class="topbar">
   <div>
     <p>THUTHUKA KHUMALO</p>
-    <p>CONTACT</p>
+    <p (click)="toggleContactModal()">CONTACT</p>
   </div>
 </div>
 
@@ -74,3 +74,16 @@
   </div>
 
 </div>
+<modal-container id="contactModal" style="display: none;" (close)="toggleContactModal()">
+
+  <div class="contact-box">
+    <div class="contact-method">
+      <p id="name">EMAIL: </p>
+      <a id="value" href="mailto:thuthuka111@gmail.com">thuthuka111@gmail.com</a>
+    </div>
+    <div class="contact-method">
+      <p id="name">PHONE: </p>
+      <p id="value">063 874 1990</p>
+    </div>
+  </div>
+</modal-container>

@@ -74,4 +74,16 @@ export class AppComponent implements OnInit {
     }
   }
 
+  toggleContactModal(): void {
+    let contactModal = document.getElementById("contactModal");
+    if (contactModal.style.display === 'none') {
+      this.windows[0].scrolling = false;
+      contactModal.style.display = 'block';
+    } else {
+      this.windows[0].scrolling = true;
+      contactModal.style.display = 'none';
+    }
+
+  }
+
 }

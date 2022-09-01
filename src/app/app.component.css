@@ -177,6 +177,29 @@ web-dev {
     padding-bottom: 8rem;
 }
 
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 33vw;
+    font-family: 'Neue-Montreal';
+    padding: 2rem;
+}
+
+.contact-method {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-method>#name {
+    font-size: 30pt;
+}
+
+.contact-method>#value {
+    font-size: 21pt;
+}
+
 @media(max-width: 1073px) {
 
     /*lg*/

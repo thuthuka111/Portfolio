@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CategoryComponent } from './category/category.component';
 import { WindowComponent } from './window/window.component';
+import { ModalContainerComponent } from './modal-container/modal-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     CategoryComponent,
-    WindowComponent
+    WindowComponent,
+    ModalContainerComponent
   ],
   imports: [
     BrowserModule,
