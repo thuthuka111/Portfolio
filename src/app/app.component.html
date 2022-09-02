@@ -74,8 +74,7 @@
   </div>
 
 </div>
-<modal-container id="contactModal" style="display: none;" (close)="toggleContactModal()">
-
+<modal-container id="contactModal" [modalDisplay]="showContactModal" (close)="toggleContactModal()">
   <div class="contact-box">
     <div class="contact-method">
       <p id="name">EMAIL: </p>

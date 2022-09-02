@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'portfolio';
   fakeBody: HTMLElement;
+  showContactModal = false;
 
   windowInView = 'prewindow';
   windows = [
@@ -75,13 +76,12 @@ export class AppComponent implements OnInit {
   }
 
   toggleContactModal(): void {
-    let contactModal = document.getElementById("contactModal");
-    if (contactModal.style.display === 'none') {
+    if (!this.showContactModal) {
       this.windows[0].scrolling = false;
-      contactModal.style.display = 'block';
+      this.showContactModal = true;
     } else {
       this.windows[0].scrolling = true;
-      contactModal.style.display = 'none';
+      this.showContactModal = false;
     }
 
   }

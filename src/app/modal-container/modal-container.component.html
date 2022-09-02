@@ -1,4 +1,4 @@
-<div class="modal-container">
+<div class="modal-container" [style]="'display: ' + (_modalDisplay ? 'flex' : 'none')" [@isInView]="transition ? 'inView' : 'notInView'">
     <div class="closebutton" (click)="closeModal()">✖</div>
     <div class="modal">
         <ng-content></ng-content>
