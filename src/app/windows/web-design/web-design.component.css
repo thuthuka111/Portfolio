@@ -11,7 +11,7 @@
     text-align: center;
 }
 
-.content-container{
+.content-container {
     display: flex;
     justify-content: space-between;
 }
@@ -53,7 +53,8 @@
     height: 67%;
     margin-left: -10%;
 }
-.image-container > div {
+
+.image-container>div {
     text-shadow: -4px 5px 2px #3e3e3e;
 }
 
@@ -66,9 +67,25 @@
     align-items: center;
 }
 
-.text-container > div {
+.text-container>div {
     background-position: center;
     background-size: cover;
     width: 88%;
     height: 90%;
+}
+
+.hippyModalContainer {
+    width: 60vw;
+    display: flex;
+}
+
+.hippy-image-container {
+    flex-basis: 55%;
+    background-color: black;
+    border-radius: 2rem;
+    height: 600px;
+}
+
+.hippy-text-container {
+    flex-basis: 40%;
 }

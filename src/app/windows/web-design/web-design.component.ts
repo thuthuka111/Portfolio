@@ -6,9 +6,17 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./web-design.component.css']
 })
 export class WebDesignComponent implements OnInit {
+  showHippyModal = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  toggleHippyModal(): void {
+    if (!this.showHippyModal) {
+      this.showHippyModal = true;
+    } else {
+      this.showHippyModal = false;
+    }
   }
 }

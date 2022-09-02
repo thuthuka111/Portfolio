@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalContainerComponent } from './modal-container/modal-container.component';
 
 @Component({
   selector: 'app-root',
