@@ -83,7 +83,6 @@ export class AppComponent implements OnInit {
       this.windows[0].scrolling = true;
       this.showContactModal = false;
     }
-
   }
 
 }

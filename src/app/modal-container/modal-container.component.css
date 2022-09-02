@@ -13,7 +13,7 @@
 
 .modal {
     padding: 2rem 3rem;
-    background-color: wheat;
+    background-color: #f1f1f1;;
     border-radius: 7px;
 }
 
@@ -22,4 +22,5 @@
     width: 4rem;
     height: 4rem;
     margin-right: -46vw;
+    cursor: pointer;
 }

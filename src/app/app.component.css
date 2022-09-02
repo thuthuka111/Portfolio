@@ -124,6 +124,7 @@
 
 category {
     flex-basis: 40%;
+    cursor: pointer;
 }
 
 .category-text {
