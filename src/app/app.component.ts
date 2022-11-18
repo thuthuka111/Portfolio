@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     this.windowMap.set('wedDesignWindow', 1);
     this.windowMap.set('graphicDesignWindow', 2);
     this.windowMap.set('webDevWindow', 3);
-    $.extend($.easing, {
+    $.extend($.easing, {//commment out for offline working
       easeInOutQuint: function (x, t, b, c, d) {
         if ((t /= d / 2) < 1) return c / 2 * t * t * t * t * t + b;
         return c / 2 * ((t -= 2) * t * t * t * t + 2) + b;
@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  scrollTo(section: string): void {
+  scrollTo(section: string): void { // comment out for offline working
     // this.windowInView = section;
 
     if (!this.inScrollingMotion) {

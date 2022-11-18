@@ -28,6 +28,7 @@
 }
 
 .card-container {
+    position: relative;
     width: 100%;
     height: 39vh;
     display: flex;
@@ -56,6 +57,7 @@
 
 .image-container>div {
     text-shadow: -4px 5px 2px #3e3e3e;
+    z-index: 0;
 }
 
 .text-container {
@@ -88,4 +90,35 @@
 
 .hippy-text-container {
     flex-basis: 40%;
+}
+
+.expandable-card {
+    position: relative;
+    display: flex;
+    width: 400px;
+    height: 300px;
+    color: #FFFFFF;
+    background: #5a2e12;
+    border-radius: 40px;
+    box-shadow: inset #000000ad 0px 0px 20px 2px;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    filter: blur(2px);
+}
+
+.toggle-expand {
+    position: absolute;
+    top: 15px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+}
+
+
+.expandable-title {
+    font-size: 32pt;
+    margin-left: 39%;
+    text-shadow: -4px 5px 2px #3e3e3e;
 }
