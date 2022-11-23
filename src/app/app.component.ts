@@ -76,6 +76,12 @@ export class AppComponent implements OnInit {
     }
   }
 
+  scrollToCategories(): void {
+    $('#fakeBody').animate({
+      scrollTop: document.getElementById("categories").offsetTop - 100
+    }, 700, 'easeInOutQuint');
+  }
+
   toggleContactModal(): void {
     if (!this.showContactModal) {
       this.windows[0].scrolling = false;

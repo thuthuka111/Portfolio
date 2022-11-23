@@ -28,7 +28,7 @@
           create a website mockup in Adobe XD to preview what the final product would look like to the client.</p>
 
         <div class="more-below-containter">
-          <div class="dashed-circle"></div>
+          <div class="dashed-circle" (click)="scrollToCategories()"></div>
           <div class="down-arrow"></div>
           <div class="arrow-text">
             <p>projects</p>
@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <div class="categories">
+    <div class="categories" id="categories">
       <category (click)="scrollTo('webDevWindow')" marginLeft="-16%" background="radial-gradient(#9199A1, #5B6164)">
         <div class="category-text">web development</div>
       </category>
