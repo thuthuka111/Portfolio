@@ -29,3 +29,9 @@ body {
 .disable-scrolling {
     overflow: hidden !important;
 }
+
+.center-image {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

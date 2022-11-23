@@ -1,5 +1,13 @@
 <p class="title">Web Development</p>
 <div class="dev-container">
+    <div class="project-fluff">
+        <p>It has been 4 years since I rented my first web server. I didnt know how to code HTML,
+            javascript or how to serve a file
+            In Hindsight it was'nt the best purchasing desicion for the skillset I had at the time. Since then i
+            have
+            learned store data on SQL/NoSQL dataabases.
+            I have learned Transmittion Protocols, all in the effort to serve website Files and API's.</p>
+    </div>
     <div class="skillset">
         <p>Skill Set</p>
         <div class="skill-display" *ngFor="let skill of skillset">
@@ -15,31 +23,50 @@
             </div>
         </div>
     </div>
-    <div class="projects-container">
-        <!-- <p class="project-fluff">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-            optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-            obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
-            nihil, eveniet aliquid culpa officia au</p> -->
-        <p class="project-fluff">It has been 4 years since I rented my first web server. I didnt know how to code HTML,
-            javascript or how to serve a file
-            In Hindsight it was'nt the best purchasing desicion for the skillset I had at the time. Since then i have
-            learned store data on SQL/NoSQL dataabases.
-            I have learned Transmittion Protocols, all in the effort to serve website Files and API's.
-        </p>
+    <div class="projects"></div>
+
+    <div class="project-fluff">
         <p class="project-fluff">
             I'm not stuck in the past though, where there is no need for self-hosting a service, a cloud service will
             do.
             I have used Google Firebase to handle things such as user authentication and distributed messanging, and
             have used Cloudflare to cache static files so that content is served to the user faster
         </p>
+    </div>
+    <div style="width: 100%; height: 2px; background-color: white;"></div>
+    <div class="projects-container">
         <div class="projects">
-            Projects
-            <!-- <div class="project">
-                <p>Waitless Digital menus</p>
-                <div class="project-image"></div>
-            </div> -->
+            <p>Projects</p>
+            <div class="project">
+                <p>Waitless Digital Menu Platform</p>
+                <div class="desc-and-media">
+                    <div id="desc">
+                        <p>This is a website where users can view a Menu of a Restaurant.
+                            All Restaurants have a specific style and theme of menu and this has to be replicated in the
+                            digital menu while not being a static png/svg
+                        </p>
+                    </div>
+                    <div id="media">
+                        <video playsinline loop muted autoplay height="100%" controls>
+                            <source src="../../../assets/videos/waitless_mobile.mp4" type="video/mp4">
+                            Error Message
+                        </video>
+                    </div>
+                </div>
+                <div class="desc-and-media">
+                    <div id="desc">
+                        <p>Architecture/Stack:
+                            The Project uses Nginx on a hosted server to serve the html content. Menu and Restaurant
+                            data is
+                            stored on a MySQL database.
+                            Images are Stored on Google Cloud Buckets
+                        </p>
+                    </div>
+                    <div id="media">
+                        <div class="center-image" style="background-image: url(../../../assets/images/wait-less_infrastructure_diagram.png); height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
             <div class="project">
                 <p>Property Scraper</p>
                 <div class="project-image">

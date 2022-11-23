@@ -174,8 +174,9 @@ web-dev {
     flex-direction: column;
     align-items: center;
     width: 83%;
-    gap: 5.3rem;
+    gap: 1.6rem;
     padding-bottom: 8rem;
+    color: white;
 }
 
 .contact-box {

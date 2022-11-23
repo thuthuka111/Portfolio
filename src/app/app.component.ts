@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
 
     this.fakeBody.addEventListener("scroll", () => {
       if (!this.inScrollingMotion && this.windowInView == 'prewindow' && this.fakeBody.scrollTop + window.innerHeight >= prewindowScrollHeight) {
-        this.scrollTo('wedDesignWindow');
+        this.scrollTo('webDevWindow');
       }
     });
   }
