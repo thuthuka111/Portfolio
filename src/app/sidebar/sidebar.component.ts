@@ -15,10 +15,10 @@ import {
   animations: [
     trigger('isExtended', [
       state('extended', style({
-        flexBasis: '20%',
+        flexBasis: '100%',
       })),
       state('collapsed', style({
-        flexBasis: '15%',
+        flexBasis: '85%',
       })),
       transition('extended <=> collapsed', [
         animate('0.4s ease-in-out'),
