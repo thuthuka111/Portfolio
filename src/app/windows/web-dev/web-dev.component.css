@@ -19,6 +19,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 2rem;
     color: white;
 }
@@ -26,6 +27,7 @@
 .skillset>p {
     font-size: 36pt;
     flex-basis: 100%;
+    text-align: center;
 }
 
 .skill-display {
