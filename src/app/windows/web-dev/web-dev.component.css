@@ -147,6 +147,10 @@
     height: 48vh;
 }
 
+.desc-and-media > #media > :first-child {
+    box-shadow: 10px 10px 0 0px #3f3f3f;
+}
+
 @media(max-width: 1073px) {
     
 }

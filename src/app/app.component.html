@@ -38,37 +38,27 @@
     </div>
 
     <div class="categories" id="categories">
-      <category (click)="scrollTo('webDevWindow')" marginLeft="-16%" background="radial-gradient(#9199A1, #5B6164)">
-        <div class="category-text">web development</div>
-      </category>
-      <category (click)="scrollTo('wedDesignWindow')" marginLeft="-27%" background="radial-gradient(#d6eef6, #e5d7f4)">
-        <div class="category-text">web design</div>
-      </category>
-      <category (click)="scrollTo('graphicDesignWindow')" marginLeft="7%"
-        background="radial-gradient(#B2876E, #9C5323)">
-        <div class="category-text">graphic design</div>
-      </category>
-      <category style="display: none;" marginLeft="-29%" background="radial-gradient(#232623, #56B560)">
-        <div class="category-text">other</div>
+      <category *ngFor="let category of categories" (click)="scrollTo(category.id)" [marginLeft]="category.marginLeft" [background]="category.background">
+        <div class="category-text">{{category.name}}</div>
       </category>
     </div>
   </div>
 
   <div class="windows" id="windows">
-    <window id="wedDesignWindow" [view]="windows[1].inView" name="WebDesign" backgroundClass="brown-background"
-      borderColor="#6D391C" [scrolling]="windows[1].scrolling" (hitBottom)="scrollTo('graphicDesignWindow')"
-      (hitTop)="scrollTo('prewindow')">
+    <window [id]="windows[1].id" [view]="windows[1].inView" name="WebDesign" backgroundClass="grey-background"
+      borderColor="#0F0B04" [scrolling]="windows[1].scrolling" (hitBottom)="scrollTo(windows[1].below)"
+      (hitTop)="scrollTo(windows[1].above)">
+      <web-dev></web-dev>
+    </window>
+    <window [id]="windows[2].id" [view]="windows[2].inView" name="GraphicDesign"
+      backgroundClass="brown-background" borderColor="#6D391C" [scrolling]="windows[2].scrolling"
+      (hitBottom)="scrollTo(windows[2].below)" (hitTop)="scrollTo(windows[2].above)">
       <web-design></web-design>
     </window>
-    <window id="graphicDesignWindow" [view]="windows[2].inView" name="GraphicDesign"
-      backgroundClass="pastelle-background" borderColor="#B5E9F9" [scrolling]="windows[2].scrolling"
-      (hitBottom)="scrollTo('webDevWindow')" (hitTop)="scrollTo('wedDesignWindow')">
+    <window [id]="windows[3].id" [view]="windows[3].inView" name="WebDevelopment" backgroundClass="pastelle-background"
+      borderColor="#B5E9F9" [scrolling]="windows[3].scrolling" (hitBottom)="scrollTo(windows[3].below)"
+      (hitTop)="scrollTo(windows[3].above)">
       <graphic-design></graphic-design>
-    </window>
-    <window id="webDevWindow" [view]="windows[3].inView" name="WebDevelopment" backgroundClass="grey-background"
-      borderColor="#0F0B04" [scrolling]="windows[3].scrolling" (hitBottom)="scrollTo('prewindow')"
-      (hitTop)="scrollTo('graphicDesignWindow')">
-      <web-dev></web-dev>
     </window>
     <window [view]="false"></window>
   </div>

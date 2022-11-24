@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ModalContainerComponent } from './modal-container/modal-container.component';
 
 @Component({
@@ -6,27 +6,33 @@ import { ModalContainerComponent } from './modal-container/modal-container.compo
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'portfolio';
   fakeBody: HTMLElement;
   showContactModal = false;
 
   windowInView = 'prewindow';
   windows = [
-    { name: 'home', inView: true, scrolling: true, id: "prewindow" },
-    { name: 'Web Design', inView: false, scrolling: false, id: "wedDesignWindow" },
-    { name: 'Graphic Design', inView: false, scrolling: false, id: "graphicDesignWindow" },
-    { name: 'Web Development', inView: false, scrolling: false, id: "webDevWindow" },
+    { name: 'home', inView: true, scrolling: true, id: "prewindow", below: '', above: '' },
+    { name: 'Web Development', inView: false, scrolling: false, id: "webDevWindow", marginLeft: '', below: '7%', background: 'radial-gradient(#9199A1, #5B6164)', above: '' },
+    { name: 'Web Design', inView: false, scrolling: false, id: "wedDesignWindow", marginLeft: '-16%', background: 'radial-gradient(#B2876E, #9C5323)', below: '', above: '' },
+    { name: 'Graphic Design', inView: false, scrolling: false, id: "graphicDesignWindow", marginLeft: '-27%', background: 'radial-gradient(#d6eef6, #e5d7f4)', below: '', above: '' },
   ];
+  categories = this.windows.slice(1);
   windowMap = new Map();
 
   inScrollingMotion = false;
 
   constructor() {
-    this.windowMap.set('prewindow', 0);
-    this.windowMap.set('wedDesignWindow', 1);
-    this.windowMap.set('graphicDesignWindow', 2);
-    this.windowMap.set('webDevWindow', 3);
+    for (let i = 1; i < this.windows.length; i++) {
+      this.windows[i].above = this.windows[i - 1].id;
+      this.windows[i].below = this.windows[(i + 1) % this.windows.length].id;
+    }
+
+    for (let i = 0; i < this.windows.length; i++) {
+      this.windowMap.set(this.windows[i].id, i);
+    }
+
     $.extend($.easing, {//commment out for offline working
       easeInOutQuint: function (x, t, b, c, d) {
         if ((t /= d / 2) < 1) return c / 2 * t * t * t * t * t + b;
@@ -36,12 +42,16 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+  }
+
+  ngAfterViewInit(): void {
     this.fakeBody = document.getElementById('fakeBody');
     let prewindowScrollHeight = document.getElementById("prewindow").scrollHeight;
 
-    this.fakeBody.addEventListener("scroll", () => {
+    this.fakeBody.addEventListener("scroll", () => { // disabled because the property isnt the right height when rendering
       if (!this.inScrollingMotion && this.windowInView == 'prewindow' && this.fakeBody.scrollTop + window.innerHeight >= prewindowScrollHeight) {
-        this.scrollTo('webDevWindow');
+        this.scrollTo(this.windows[1].id);
       }
     });
   }
