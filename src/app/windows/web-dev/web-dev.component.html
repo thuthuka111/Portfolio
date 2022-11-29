@@ -33,7 +33,7 @@
             have used Cloudflare to cache static files so that content is served to the user faster
         </p>
     </div>
-    <div style="width: 100%; height: 2px; background-color: white;"></div>
+    <div class="divider"></div>
     <div class="projects-container">
         <div class="projects">
             <p>Projects</p>
@@ -63,22 +63,43 @@
                         </p>
                     </div>
                     <div id="media">
-                        <div class="center-image" style="background-image: url(../../../assets/images/wait-less_infrastructure_diagram.png); height: 100%;"></div>
+                        <div class="center-image"
+                            style="background-image: url(../../../assets/images/wait-less_infrastructure_diagram.png); height: 100%;">
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="divider"></div>
             <div class="project">
                 <p>Property Scraper</p>
-                <div class="project-image">
-                    <div class="project-text">
-                        <p>Mobile Application that sends push notifications to me when new properties are listed
-                            on popular
-                            property website</p>
-                        <p>Uses NoSQL database</p>
-                        <p>Uses Google Firebase cloud for notifications</p>
-                        <p>Backend on Python and Node.js</p>
+                <div class="desc-and-media">
+                    <div id="desc">
+                        <p>Midway through 2022 I need a place to stay near university.
+                            I wanted to be alerted of new properties on the market for renting.
+                            I then build an app that would alert me of such properties.
+                        </p>
                     </div>
-
+                    <div id="media">
+                        <video playsinline loop muted autoplay height="100%">
+                            <source src="../../../assets/videos/property_mobile.mp4" type="video/mp4">
+                            Error Message
+                        </video>
+                    </div>
+                </div>
+                <div class="desc-and-media">
+                    <div id="desc">
+                        <p>Architecture/Stack:
+                            The project is built with to be cross platform with the ionic framework.
+                            A self wrote python script is used to collect properties from the web and store them.
+                            Another python script is used to send notifications to notification subscribers (me).
+                            Google's Firebase Cloud Messaging service is used to deliver payloads to subscribed devices.
+                        </p>
+                    </div>
+                    <div id="media">
+                        <div class="center-image"
+                            style="background-image: url(../../../assets/images/property\ scrape\ Infrastructure\ diagram.png); height: 100%;">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="project">
