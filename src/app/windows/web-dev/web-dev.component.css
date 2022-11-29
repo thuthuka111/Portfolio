@@ -159,6 +159,10 @@
     background-color: white;
 }
 
+.reverse {
+    flex-direction: row-reverse;
+}
+
 @media(max-width: 1073px) {}
 
 /* mobile */
