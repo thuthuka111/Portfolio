@@ -102,6 +102,37 @@
                     </div>
                 </div>
             </div>
+            <div class="project">
+                <p>Portfolio Website</p>
+                <div class="desc-and-media">
+                    <div id="desc">
+                        <p>This is the website that is currently being viewed.
+                            I hope it is up to par
+                        </p>
+                    </div>
+                    <div id="media">
+                        <video playsinline loop muted autoplay height="100%" controls>
+                            <source src="../../../assets/videos/portfolio_desktop.mp4" type="video/mp4">
+                            Error Message
+                        </video>
+                    </div>
+                </div>
+                <div class="desc-and-media">
+                    <div id="desc">
+                        <p>Architecture/Stack:
+                            This project makes heavy use of Amazon Web Services. First the source code
+                            is compiled to the build files, and these build files are sent to an s3 bucket.
+                            The DNS is configured on Route 53 to fetch content from the Cloudfront CDN, which gets its content from the s3 bucket.
+                            Using git hooks, I have automated the process of invalidating the cache once new content is uploaded to the s3 bucket.
+                        </p>
+                    </div>
+                    <div id="media">
+                        <div class="center-image"
+                            style="background-image: url(../../../assets/images/Portfolio\ architecture\ diagram.png); height: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- <div class="project">
                 <p>Faade Event Finder</p>
                 <div class="project-image">
