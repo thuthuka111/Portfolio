@@ -50,17 +50,21 @@
       (hitTop)="scrollTo(windows[1].above)">
       <web-dev></web-dev>
     </window>
-    <window [id]="windows[2].id" [view]="windows[2].inView" name="GraphicDesign"
-      backgroundClass="brown-background" borderColor="#6D391C" [scrolling]="windows[2].scrolling"
-      (hitBottom)="scrollTo(windows[2].below)" (hitTop)="scrollTo(windows[2].above)">
+    <window [id]="windows[2].id" [view]="windows[2].inView" name="ComputerGraphics" backgroundClass="black-background"
+      borderColor="#0BA81A" [scrolling]="windows[2].scrolling" (hitBottom)="scrollTo(windows[2].below)"
+      (hitTop)="scrollTo(windows[2].above)">
+      <graphics-engine></graphics-engine>
+    </window>
+    <window [id]="windows[3].id" [view]="windows[3].inView" name="GraphicDesign"
+      backgroundClass="brown-background" borderColor="#6D391C" [scrolling]="windows[3].scrolling"
+      (hitBottom)="scrollTo(windows[3].below)" (hitTop)="scrollTo(windows[3].above)">
       <web-design></web-design>
     </window>
-    <window [id]="windows[3].id" [view]="windows[3].inView" name="WebDevelopment" backgroundClass="pastelle-background"
-      borderColor="#B5E9F9" [scrolling]="windows[3].scrolling" (hitBottom)="scrollTo(windows[3].below)"
-      (hitTop)="scrollTo(windows[3].above)">
+    <window [id]="windows[4].id" [view]="windows[4].inView" name="WebDevelopment" backgroundClass="pastelle-background"
+      borderColor="#B5E9F9" [scrolling]="windows[4].scrolling" (hitBottom)="scrollTo(windows[4].below)"
+      (hitTop)="scrollTo(windows[4].above)">
       <graphic-design></graphic-design>
     </window>
-    <window [view]="false"></window>
   </div>
 
 </div>

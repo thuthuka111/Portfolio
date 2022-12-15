@@ -14,10 +14,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   windowInView = 'prewindow';
   windows = [
     { name: 'home', inView: true, scrolling: true, id: "prewindow", below: '', above: '' },
-    { name: 'Web Development', inView: false, scrolling: false, id: "webDevWindow", marginLeft: '', below: '7%', background: 'radial-gradient(#9199A1, #5B6164)', above: '' },
+    { name: 'Web Development', inView: false, scrolling: false, id: "webDevWindow", marginLeft: '', below: '', background: 'radial-gradient(#9199A1, #5B6164)', above: '' },
+    { name: "Computer Graphics", inView: false, scrolling: false, id: "computerGraphicsWindow", marginLeft: '-20%', below: '', background: 'radial-gradient(#56B560, #232623)', above: ''},
     { name: 'Web Design', inView: false, scrolling: false, id: "wedDesignWindow", marginLeft: '-16%', background: 'radial-gradient(#B2876E, #9C5323)', below: '', above: '' },
     { name: 'Graphic Design', inView: false, scrolling: false, id: "graphicDesignWindow", marginLeft: '-27%', background: 'radial-gradient(#d6eef6, #e5d7f4)', below: '', above: '' },
   ];
+  currentWindow: number = 0;
   categories = this.windows.slice(1);
   windowMap = new Map();
 
@@ -65,11 +67,13 @@ export class AppComponent implements OnInit, AfterViewInit {
       // set the current window to notInView
       this.windows[this.windowMap.get(this.windowInView)].inView = false;
       this.windows[this.windowMap.get(this.windowInView)].scrolling = false;
+      // for good timings
+      let windowJump: number = Math.min(2, Math.abs(this.windowMap.get(section) - this.currentWindow));
 
       setTimeout(() => {// allow window to collapse
         $('#fakeBody').animate({
           scrollTop: document.getElementById(section).offsetTop
-        }, 700, 'easeInOutQuint', () => {
+        }, windowJump * 700, 'easeInOutQuint', () => {
           this.windowInView = section;
           this.inScrollingMotion = false;
         });
@@ -79,8 +83,9 @@ export class AppComponent implements OnInit, AfterViewInit {
           // set the current window to inView
           this.windows[this.windowMap.get(section)].inView = true;
           this.windows[this.windowMap.get(section)].scrolling = true;
+          this.currentWindow = this.windowMap.get(section);
 
-        }, 350);
+        }, (windowJump * 700) - 350);
       }, 200);
 
     }
