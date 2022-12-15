@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'web-dev',
   templateUrl: './web-dev.component.html',
-  styleUrls: ['./web-dev.component.css']
+  styleUrls: ['./web-dev.component.css', '../common-styles.css']
 })
 export class WebDevComponent implements OnInit {
   skillset = [

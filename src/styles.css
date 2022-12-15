@@ -13,6 +13,11 @@
     src: url(./assets/fonts/Segoe-UI-Italic.ttf);
 }
 
+@font-face{
+    font-family: Bitstream;
+    src: url(./assets/fonts/BitstreamVeraMono.ttf);
+}
+
 .neue-font {
     font-family: 'Neue-Montreal';
 }
