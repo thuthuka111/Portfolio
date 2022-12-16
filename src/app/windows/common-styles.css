@@ -67,6 +67,7 @@
 .desc-and-media>#media {
     flex-basis: 55%;
     height: 48vh;
+    width: 45vw;
 }
 
 .desc-and-media>#media> :first-child {

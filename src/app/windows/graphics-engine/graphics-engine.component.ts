@@ -12,4 +12,7 @@ export class GraphicsEngineComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openClassDiagram(): void {
+    window.open('../../../assets/images/Custom-Engine\ UML.svg', '_blank');
+  }
 }
