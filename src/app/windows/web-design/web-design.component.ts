@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'web-design',
   templateUrl: './web-design.component.html',
-  styleUrls: ['./web-design.component.css']
+  styleUrls: ['./web-design.component.css', '../common-styles.css']
 })
 export class WebDesignComponent implements OnInit {
   showHippyModal = false;
