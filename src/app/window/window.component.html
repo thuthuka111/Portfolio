@@ -1,6 +1,9 @@
 <div [@isInView]="isInView ? 'inView' : 'notInView'" class="window-container" (@isInView.start)="stateChange()">
     <div class="fake-border" [style]="'background-color: ' + borderColor + ';'"></div>
-    <div [class]="'window-content container ' + backgroundClass"></div>
+    <div [class]="'window-content container ' + backgroundClass">
+        <div class="move-prompt top-prompt" (click)="goUp()">GO UP</div>
+        <div class="move-prompt bottom-prompt" (click)="goDown()">GO DOWN</div>
+    </div>
     <div [id]="name + '-container'" [@content]="contentState" [class]="'window-content container ' + (scrolling ? '' : ' disable-scrolling')">
         <ng-content></ng-content>
     </div>

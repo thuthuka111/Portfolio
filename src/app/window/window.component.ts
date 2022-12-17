@@ -85,12 +85,10 @@ export class WindowComponent implements AfterViewInit {
       clearTimeout(timer);
       timer = setTimeout(function () {
         if (eventElement.scrollTop == 0) {
-          thissy.contentState = "below";
-          thissy.hitTop.emit();
+          thissy.goUp();
         }
         if (eventElement.scrollTop + eventElement.clientHeight >= eventElement.scrollHeight - 5) {
-          thissy.contentState = "above";
-          thissy.hitBottom.emit();
+          thissy.goDown();
         }
       }, 130);
 
@@ -103,5 +101,15 @@ export class WindowComponent implements AfterViewInit {
     } else {
       this.stateSet = true;
     }
+  }
+
+  goUp(): void {
+    this.contentState = "below";
+    this.hitTop.emit();
+  }
+
+  goDown(): void {
+    this.contentState = "above";
+    this.hitBottom.emit();
   }
 }

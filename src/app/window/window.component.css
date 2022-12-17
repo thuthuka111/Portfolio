@@ -55,4 +55,32 @@
 
 .black-background {
     background-image: url(../../assets/images/Hacker-Black.png);
-};
+}
+
+.move-prompt {
+    width: 98.4%;
+    height: 29px;
+    z-index: 3;
+    background-color: #f0f8ff24;
+    box-shadow: #343c447d 2px 3px 3px 0px;
+    text-align: center;
+    cursor: pointer;
+    color: azure;
+}
+
+.top-prompt {
+    position: relative;
+    top: 0.5rem;
+}
+
+.bottom-prompt {
+    position: relative;
+    margin-top: 88.9vh;
+}
+
+@media(max-width: 815px) {
+    .window-content {
+        width: 97.5%;
+        height: 98.5;
+    }
+}
