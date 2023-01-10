@@ -58,14 +58,20 @@
 }
 
 .move-prompt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 98.4%;
     height: 29px;
     z-index: 3;
-    background-color: #f0f8ff24;
-    box-shadow: #343c447d 2px 3px 3px 0px;
-    text-align: center;
     cursor: pointer;
     color: azure;
+    transition: all 0.3s;
+}
+
+.move-prompt:hover {
+    background-color: #f0f8ff24;
+    box-shadow: #343c447d 2px 3px 3px 0px;
 }
 
 .top-prompt {
@@ -82,5 +88,10 @@
     .window-content {
         width: 97.5%;
         height: 98.5;
+    }
+
+    .move-prompt {
+        background-color: #f0f8ff24;
+        box-shadow: #343c447d 2px 3px 3px 0px;
     }
 }
