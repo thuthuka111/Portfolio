@@ -12,11 +12,4 @@ export class WebDesignComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  toggleHippyModal(): void {
-    if (!this.showHippyModal) {
-      this.showHippyModal = true;
-    } else {
-      this.showHippyModal = false;
-    }
-  }
 }
