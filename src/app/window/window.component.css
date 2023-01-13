@@ -62,7 +62,7 @@
     justify-content: center;
     align-items: center;
     width: 98.4%;
-    height: 29px;
+    height: 60px;
     z-index: 3;
     cursor: pointer;
     color: azure;
@@ -70,7 +70,7 @@
 }
 
 .move-prompt:hover {
-    background-color: #f0f8ff24;
+    background-color: #f0f8ff24 !important;
     box-shadow: #343c447d 2px 3px 3px 0px;
 }
 
@@ -81,7 +81,7 @@
 
 .bottom-prompt {
     position: relative;
-    margin-top: 88.9vh;
+    margin-top: 79.9vh;
 }
 
 @media(max-width: 815px) {

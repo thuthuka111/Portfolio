@@ -15,6 +15,17 @@ import {
   templateUrl: './window.component.html',
   styleUrls: ['./window.component.css'],
   animations: [
+    trigger('navigatePrompt', [
+      state('hidden', style({
+        backgroundColor: '#f0f8ff00',
+      })),
+      state('prompt', style({
+        backgroundColor: '#f0f8ff24',
+      })),
+      transition('hidden <=> prompt', [
+        animate('0.3s ease-in'),
+      ]),
+    ]),
     trigger('isInView', [
       state('inView', style({
         width: '100%',
@@ -71,6 +82,9 @@ export class WindowComponent implements AfterViewInit {
   @Output() hitTop = new EventEmitter<void>();
   @Output() hitBottom = new EventEmitter<void>();
 
+  topButtonState: 'hidden' | 'prompt' = 'hidden';
+  bottomButtonState: 'hidden' | 'prompt' = 'hidden';
+
   contentState = "below";
   stateSet = false;
 
@@ -85,10 +99,18 @@ export class WindowComponent implements AfterViewInit {
       clearTimeout(timer);
       timer = setTimeout(function () {
         if (eventElement.scrollTop == 0) {
-          thissy.goUp();
+          // thissy.goUp();
+          thissy.topButtonState = 'prompt';
+          setTimeout(() => {
+            thissy.topButtonState = 'hidden';
+          }, 1000);
         }
         if (eventElement.scrollTop + eventElement.clientHeight >= eventElement.scrollHeight - 5) {
-          thissy.goDown();
+          // thissy.goDown();
+          thissy.bottomButtonState = 'prompt';
+          setTimeout(() => {
+            thissy.bottomButtonState = 'hidden';
+          }, 1000);
         }
       }, 130);
 

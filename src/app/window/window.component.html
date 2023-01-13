@@ -1,10 +1,10 @@
 <div [@isInView]="isInView ? 'inView' : 'notInView'" class="window-container" (@isInView.start)="stateChange()">
     <div class="fake-border" [style]="'background-color: ' + borderColor + ';'"></div>
     <div [class]="'window-content container ' + backgroundClass">
-        <div class="move-prompt top-prompt" (click)="goUp()">
+        <div [@navigatePrompt]="topButtonState" class="move-prompt top-prompt" (click)="goUp()">
             <img src="../../assets/svgs/expand_less_FILL0_wght400_GRAD0_opsz48.svg" />
         </div>
-        <div class="move-prompt bottom-prompt" (click)="goDown()">
+        <div [@navigatePrompt]="bottomButtonState" class="move-prompt bottom-prompt" (click)="goDown()">
             <img src="../../assets/svgs/expand_more_FILL0_wght400_GRAD0_opsz48.svg" />
         </div>
     </div>
