@@ -15,9 +15,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   windows = [
     { name: 'home', inView: true, scrolling: true, id: "prewindow", below: '', above: '' },
     { name: 'Web Development', inView: false, scrolling: false, id: "webDevWindow", marginLeft: '', below: '', background: 'radial-gradient(#9199A1, #5B6164)', above: '' },
-    { name: "Computer Graphics", inView: false, scrolling: false, id: "computerGraphicsWindow", marginLeft: '-20%', below: '', background: 'radial-gradient(#56B560, #232623)', above: ''},
+    { name: "Computer Graphics", inView: false, scrolling: false, id: "computerGraphicsWindow", marginLeft: '-20%', below: '', background: 'radial-gradient(#56B560, #232623)', above: '' },
     { name: 'Web Design', inView: false, scrolling: false, id: "wedDesignWindow", marginLeft: '-16%', background: 'radial-gradient(#B2876E, #9C5323)', below: '', above: '' },
     { name: 'Graphic Design', inView: false, scrolling: false, id: "graphicDesignWindow", marginLeft: '-27%', background: 'radial-gradient(#d6eef6, #e5d7f4)', below: '', above: '' },
+    { name: 'Multimedia', inView: false, scrolling: false, id: "multimediaWindow", marginLeft: '-20%', background: 'radial-gradient(rgb(94 178 115), #d83eb7)', below: '', above: '' },
   ];
   currentWindow: number = 0;
   categories = this.windows.slice(1);

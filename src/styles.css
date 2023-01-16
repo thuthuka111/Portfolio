@@ -13,7 +13,7 @@
     src: url(./assets/fonts/Segoe-UI-Italic.ttf);
 }
 
-@font-face{
+@font-face {
     font-family: Bitstream;
     src: url(./assets/fonts/BitstreamVeraMono.ttf);
 }
@@ -39,4 +39,34 @@ body {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.bottom-right-inner-shadow {
+    box-shadow: inset -7px -7px 9px -7px rgb(0 0 0 / 50%);
+}
+
+.bottom-right-shadow {
+    box-shadow: 4px 4px 6px 0px rgb(0 0 0 / 20%);
 }

@@ -6,6 +6,9 @@ import { WebDevComponent } from './web-dev/web-dev.component';
 import { GraphicsEngineComponent } from './graphics-engine/graphics-engine.component';
 
 import { ModalContainerComponent } from '.././modal-container/modal-container.component';
+import { MultimediaComponent } from './multimedia/multimedia.component';
+import { MultimediaCardComponent } from './multimedia/multimedia-card/multimedia-card.component';
+import { WindowCardComponent } from './window-card/window-card.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,9 @@ import { ModalContainerComponent } from '.././modal-container/modal-container.co
     WebDevComponent,
     ModalContainerComponent,
     GraphicsEngineComponent,
+    MultimediaComponent,
+    MultimediaCardComponent,
+    WindowCardComponent,
   ],
   exports: [
     WebDesignComponent,
@@ -21,6 +27,7 @@ import { ModalContainerComponent } from '.././modal-container/modal-container.co
     WebDevComponent,
     ModalContainerComponent,
     GraphicsEngineComponent,
+    MultimediaComponent,
   ],
   imports: [
     CommonModule,

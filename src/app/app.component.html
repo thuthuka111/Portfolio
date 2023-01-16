@@ -65,6 +65,11 @@
       (hitTop)="scrollTo(windows[4].above)">
       <graphic-design></graphic-design>
     </window>
+    <window [id]="windows[5].id" [view]="windows[5].inView" name="Multimedia" backgroundClass="grid-background"
+      borderColor="#D50EAA" [scrolling]="windows[5].scrolling" (hitBottom)="scrollTo(windows[5].below)"
+      (hitTop)="scrollTo(windows[5].above)">
+      <multimedia></multimedia>
+    </window>
   </div>
 
 </div>

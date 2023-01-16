@@ -57,6 +57,10 @@
     background-image: url(../../assets/images/Hacker-Black.png);
 }
 
+.grid-background {
+    background-image: url(../../assets/images/green-grid-background.png);
+}
+
 .move-prompt {
     display: flex;
     justify-content: center;
