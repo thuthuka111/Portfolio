@@ -1,1 +1,26 @@
-<p>window-card works!</p>
+<div class="flex-row center" [style]="'gap: 50px; ' + (reverse !== undefined ? 'flex-direction: row-reverse': '')">
+    <div class="media-container">
+        <div class="flex-row center media-platform">
+            <!--pass this data into the carousel-->
+            <div *ngIf="media" style="height: inherit; width: inherit;">
+                <div *ngIf="media[0].image" class="center-image"
+                    style="background-image: url('{{media[0].mediaURL}}'); height: 100%; width: inherit;">
+                </div>
+                <div *ngIf="!media[0].image" id="media"
+                    style="width: inherit; height: inherit; display: flex; justify-content: center;">
+                    <video playsinline loop muted autoplay height="100%" controls>
+                        <source [src]="media[0].mediaURL" type="video/mp4">
+                        Error Message
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="media-shadow"></div>
+    </div>
+    <div class="flex-row center" style="position: relative;">
+        <div class="text-platform" [style]="(reverse !== undefined ? 'text-align: right': '')">
+            {{text}}</div>
+        <div class="text-shadow" [style]="(reverse !== undefined ? 'left: 0px': '')">
+        </div>
+    </div>
+</div>
