@@ -1,6 +1,6 @@
-<div class="flex-row center" [style]="'gap: 50px; ' + (reverse !== undefined ? 'flex-direction: row-reverse': '')">
+<div class="flex-row center card-container" [style]="(reverse !== undefined ? 'flex-direction: row-reverse': '')">
     <div class="media-container">
-        <div class="flex-row center media-platform">
+        <div #media_platform class="flex-row center media-platform">
             <!--pass this data into the carousel-->
             <div *ngIf="media" style="height: inherit; width: inherit;">
                 <div *ngIf="media[0].image" class="center-image"
@@ -15,12 +15,12 @@
                 </div>
             </div>
         </div>
-        <div class="media-shadow"></div>
+        <div #media_shadow class="media-shadow"></div>
     </div>
     <div class="flex-row center" style="position: relative;">
-        <div class="text-platform" [style]="(reverse !== undefined ? 'text-align: right': '')">
+        <div #text_platform class="text-platform" [style]="(reverse !== undefined ? 'text-align: right': '')">
             {{text}}</div>
-        <div class="text-shadow" [style]="(reverse !== undefined ? 'left: 0px': '')">
+        <div #text_shadow class="text-shadow" [style]="(reverse !== undefined ? 'left: 0px': '')">
         </div>
     </div>
 </div>
