@@ -1,5 +1,5 @@
 <div class="flex-row center card-container" [style]="(reverse !== undefined ? 'flex-direction: row-reverse': '')">
-    <div class="media-container">
+    <div #media_container class="media-container">
         <div #media_platform class="flex-row center media-platform">
             <!--pass this data into the carousel-->
             <div *ngIf="media" style="height: inherit; width: inherit;">
