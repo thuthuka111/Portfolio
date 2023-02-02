@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CategoryComponent } from './category/category.component';
 import { WindowComponent } from './window/window.component';
+import { FullscreenViewerComponent } from './fullscreen-viewer/fullscreen-viewer.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { WindowComponent } from './window/window.component';
     SidebarComponent,
     CategoryComponent,
     WindowComponent,
+    FullscreenViewerComponent,
   ],
   imports: [
     BrowserModule,

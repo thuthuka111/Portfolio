@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { FullscreenViewerService } from 'src/app/fullscreen-viewer-service.service';
 
 interface Media {
   mediaURL: string,
@@ -28,6 +29,8 @@ export class WindowCardComponent implements AfterViewInit {
   @Input() widthDif: number | undefined;
   @Input() heightDif: number | undefined;
 
+  constructor(private fullscreenService: FullscreenViewerService) { }
+
   ngAfterViewInit() {
     if (this.mediaContainerEl.nativeElement) {
       if (this.widthDif) {
@@ -54,5 +57,9 @@ export class WindowCardComponent implements AfterViewInit {
       this.mediaShadowEl.nativeElement.style.backgroundColor = this.shadowColour;
       this.textShadowEl.nativeElement.style.backgroundColor = this.shadowColour;
     }
+  }
+
+  toggleFullscreen() {
+    this.fullscreenService.newFullscreenContext(this.media);
   }
 }

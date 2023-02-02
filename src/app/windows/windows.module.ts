@@ -10,6 +10,8 @@ import { MultimediaComponent } from './multimedia/multimedia.component';
 import { MultimediaCardComponent } from './multimedia/multimedia-card/multimedia-card.component';
 import { WindowCardComponent } from './window-card/window-card.component';
 
+import { CarouselComponent } from './carousel/carousel.component';
+
 @NgModule({
   declarations: [
     WebDesignComponent,
@@ -20,6 +22,7 @@ import { WindowCardComponent } from './window-card/window-card.component';
     MultimediaComponent,
     MultimediaCardComponent,
     WindowCardComponent,
+    CarouselComponent,
   ],
   exports: [
     WebDesignComponent,
@@ -28,6 +31,7 @@ import { WindowCardComponent } from './window-card/window-card.component';
     ModalContainerComponent,
     GraphicsEngineComponent,
     MultimediaComponent,
+    WindowCardComponent,
   ],
   imports: [
     CommonModule,

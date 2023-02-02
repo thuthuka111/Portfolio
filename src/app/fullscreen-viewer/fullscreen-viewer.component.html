@@ -1,0 +1,9 @@
+<div *ngIf="fullscreen$ | async" class="container flex-row center" (click)="fullscreenMinimize()">
+    <div *ngIf="media$ | async as media" class="media-container" (click)="clickedImage($event)">
+        <img *ngIf="media[0].image" style="height: 90vh;" [src]="media[0].mediaURL">
+        <video *ngIf="!media[0].image" playsinline loop muted autoplay height="100%" width="100%" controls>
+            <source [src]="media[0].mediaURL" type="video/mp4">
+            Error Message
+        </video>
+    </div>
+</div>
