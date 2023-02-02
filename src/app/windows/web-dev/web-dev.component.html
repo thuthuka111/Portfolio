@@ -41,14 +41,15 @@
                 <general-card text="Midway through 2022 I need a place to stay near university.
             I wanted to be alerted of new properties on the market for renting.
             I then built an app that would alert me of such properties."
-                    [media]="[{mediaURL: 'assets/videos/property_mobile.mp4', image: false}]">
+                    [media]="[{mediaURL: 'assets/videos/property_mobile.mp4', image: false}]" [heightDif]="80">
                 </general-card>
                 <general-card text="Architecture/Stack:
                 The project is built with to be cross platform with the ionic framework.
                 A self wrote python script is used to collect properties from the web and store them.
                 Another python script is used to send notifications to notification subscribers (me).
                 Google's Firebase Cloud Messaging service is used to deliver payloads to subscribed devices."
-                    [media]="[{mediaURL: 'assets/images/property\ scrape\ Infrastructure\ diagram.png', image: true}]" reverse></general-card>
+                    [media]="[{mediaURL: 'assets/images/property\ scrape\ Infrastructure\ diagram.png', image: true}]"
+                    [widthDif]="120" reverse></general-card>
             </div>
             <div class="divider"></div>
             <div class="project">
@@ -86,57 +87,19 @@
             <div class="divider"></div>
             <div class="project">
                 <p>Portfolio Website</p>
-                <div class="desc-and-media">
-                    <div id="desc">
-                        <p>This is the website that is currently being viewed.
-                            I hope it is up to par
-                        </p>
-                    </div>
-                    <div id="media">
-                        <video playsinline loop muted autoplay height="100%" controls>
-                            <source src="../../../assets/videos/portfolio_desktop.mp4" type="video/mp4">
-                            Error Message
-                        </video>
-                    </div>
-                </div>
-                <div class="desc-and-media">
-                    <div id="desc">
-                        <p>Architecture/Stack:
-                            This project makes heavy use of Amazon Web Services. First the source code
-                            is compiled to the build files, and these build files are sent to an s3 bucket.
-                            The DNS is configured on Route 53 to fetch content from the Cloudfront CDN, which gets its
-                            content from the s3 bucket.
-                            Using git hooks, I have automated the process of invalidating the cache once new content is
-                            uploaded to the s3 bucket.
-                        </p>
-                    </div>
-                    <div id="media">
-                        <div class="center-image"
-                            style="background-image: url(../../../assets/images/Portfolio\ architecture\ diagram.png); height: 100%;">
-                        </div>
-                    </div>
-                </div>
+                <general-card text="This is the website that is currently being viewed."
+                    [media]="[{mediaURL: 'assets/videos/portfolio_desktop.mp4', image: false}]"
+                    colour="rgb(151 202 215)" shadowColour="#4a727c" [heightDif]="80"></general-card>
+                <general-card text="Architecture/Stack:
+                This project makes heavy use of Amazon Web Services. First the source code
+                is compiled to the build files, and these build files are sent to an s3 bucket.
+                The DNS is configured on Route 53 to fetch content from the Cloudfront CDN, which gets its
+                content from the s3 bucket.
+                Using git hooks, I have automated the process of invalidating the cache once new content is
+                uploaded to the s3 bucket."
+                    [media]="[{mediaURL: 'assets/images/Portfolio\ architecture\ diagram.png', image: true}]"
+                    colour="rgb(151 202 215)" shadowColour="#4a727c" [widthDif]="120"></general-card>
             </div>
-            <!-- <div class="project">
-                <p>Faade Event Finder</p>
-                <div class="project-image">
-                    <div class="project-text">
-                        <p>Web Application to find events that are happening around</p>
-                        <p>Angular Frontend</p>
-                        <p>Node.js Backend</p>
-                        <p>MySQL database</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="project">
-                <p>Waitless Digital Menu CMS</p>
-                <div class="project-image">
-                    <div class="project-text">
-                        <p>Content Management System for managing The availabily of items on menus and specials</p>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
     <div style="min-height: 160px;"></div>
