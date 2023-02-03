@@ -11,6 +11,7 @@ import { MultimediaCardComponent } from './multimedia/multimedia-card/multimedia
 import { WindowCardComponent } from './window-card/window-card.component';
 
 import { CarouselComponent } from './carousel/carousel.component';
+import { PlayOnViewportDirective } from './play-on-viewport.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     MultimediaCardComponent,
     WindowCardComponent,
     CarouselComponent,
+    PlayOnViewportDirective,
   ],
   exports: [
     WebDesignComponent,
