@@ -1,9 +1,12 @@
 <p class="title" style="font-family: Bitstream;">Computer Graphics</p>
 <div class="content-container bitsream-font">
     <div class="fluff">
-        <p>I took on the challenge of building my own physics simulation engine from scratch. This means writing the shaders that tell the
-            GPU what to render. Progressing each object forward in time, based on real life physics. Efficiently resolving
-            collisions of objects and deciding the response. This has really tought me more about the C++ language and how computer graphics are done.
+        <p>I took on the challenge of building my own physics simulation engine from scratch. This means writing the
+            shaders that tell the
+            GPU what to render. Progressing each object forward in time, based on real life physics. Efficiently
+            resolving
+            collisions of objects and deciding the response. This has really tought me more about the C++ language and
+            how computer graphics are done.
         </p>
     </div>
     <div class="divider"></div>
@@ -13,7 +16,8 @@
             <div class="desc-and-media">
                 <div id="desc">
                     <p>This Simulation shows one object of a low mass colliding with larger object of larger mass
-                        it can be seen that the object with the lower mass is often moving fastest as it has less inertia
+                        it can be seen that the object with the lower mass is often moving fastest as it has less
+                        inertia
                     </p>
                 </div>
                 <div id="media">
@@ -23,18 +27,14 @@
                     </video>
                 </div>
             </div>
-            <div class="desc-and-media">
-                <div id="desc">
-                    <p>
-                        Class Diagram of the Project (Click image to View diagram in full quality)
-                    </p>
-                </div>
-                <div id="media" (click)="openClassDiagram()">
-                    <div class="center-image"
-                        style="background-image: url(../../../assets/images/Custom-Engine\ UML.svg); height: 100%;">
-                    </div>
-                </div>
-            </div>
+            <general-card text="Class Diagram of the Project. Design patterns used appropriately to seperate concerns and increase maintainability."
+                [media]="[{mediaURL: 'assets/images/Custom-Engine\ UML.svg', image: true}]" colour="rgb(17 97 24)"
+                shadowColour="#053509" [widthDif]="80" [heightDif]="-30"></general-card>
+            <general-card
+                text="Here the User can interact with the Simulation by controlling the movement of a ball. 
+                Text output has also been added to the program, this is done by using mapping characters to generated font textures and rendering the textures"
+                [media]="[{mediaURL: 'assets/videos/collision_engine_2.mp4', image: false}]" colour="rgb(17 97 24)"
+                shadowColour="#053509" [widthDif]="50" [heightDif]="-10" reverse=""></general-card>
         </div>
     </div>
 </div>
