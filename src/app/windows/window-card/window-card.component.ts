@@ -29,10 +29,12 @@ export class WindowCardComponent implements AfterViewInit {
   @Input() widthDif: number | undefined;
   @Input() heightDif: number | undefined;
 
+  @ViewChild('video') videoEl: ElementRef<HTMLVideoElement> | undefined;
+
   constructor(private fullscreenService: FullscreenViewerService) { }
 
   ngAfterViewInit() {
-    if (this.mediaContainerEl.nativeElement) {
+    if (this.mediaContainerEl) {
       if (this.widthDif) {
         let baseWidth = 600;
 
@@ -48,14 +50,32 @@ export class WindowCardComponent implements AfterViewInit {
       }
     }
 
-    if (this.mediaPlatformEl.nativeElement && this.textPlatformEl.nativeElement && this.colour) {
+    if (this.mediaPlatformEl && this.textPlatformEl && this.colour) {
       this.textPlatformEl.nativeElement.style.backgroundColor = this.colour;
       this.mediaPlatformEl.nativeElement.style.backgroundColor = this.colour;
     }
 
-    if (this.mediaShadowEl.nativeElement && this.textShadowEl.nativeElement && this.shadowColour) {
+    if (this.mediaShadowEl && this.textShadowEl && this.shadowColour) {
       this.mediaShadowEl.nativeElement.style.backgroundColor = this.shadowColour;
       this.textShadowEl.nativeElement.style.backgroundColor = this.shadowColour;
+    }
+
+    if (this.videoEl) {
+      this.videoEl.nativeElement.pause();
+
+      let intersectionObserverOptions = {
+        threshold: 1.0
+      };
+      let obvserver = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry: IntersectionObserverEntry) => {
+          if (entry.isIntersecting)
+            this.videoEl.nativeElement.play();
+          else
+            this.videoEl.nativeElement.pause();
+        });
+      }, intersectionObserverOptions);
+
+      obvserver.observe(this.videoEl.nativeElement);
     }
   }
 

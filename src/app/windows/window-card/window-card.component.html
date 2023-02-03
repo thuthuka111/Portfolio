@@ -8,7 +8,7 @@
                 </div>
                 <div *ngIf="!media[0].image" id="media"
                     style="width: inherit; height: inherit; display: flex; justify-content: center;">
-                    <video playsinline loop muted autoplay height="100%" controls>
+                    <video #video playsinline loop muted height="100%" controls>
                         <source [src]="media[0].mediaURL" type="video/mp4">
                         Error Message
                     </video>
