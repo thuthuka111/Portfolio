@@ -18,16 +18,11 @@
         <p>THUTHUKA KHUMALO</p>
       </div>
       <div class="rightside">
-        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-          molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-          numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-          optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-          obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
-          nihil, eveniet aliquid culpa officia au</p> -->
-        <p>I'm a web developer with experience in building websites from the ground up.</p>
-        <p>Before any HTML is written, I
-          create a website mockup in Adobe XD to preview what the final product would look like to the client.</p>
-
+        <p>I am a Software developer with experience in the design and deployement of cloud applications</p>
+        <p>When Designing a product, before any code is written I first make a design
+          of the product, be that the architecture or the UI/UX.
+        </p>
+        <p>Below is a list of the project categories I have experience with</p>
         <div class="more-below-containter">
           <div class="dashed-circle" (click)="scrollToCategories()"></div>
           <div class="down-arrow"></div>
@@ -39,7 +34,8 @@
     </div>
 
     <div class="categories" id="categories">
-      <category *ngFor="let category of categories" (click)="scrollTo(category.id)" [marginLeft]="category.marginLeft" [background]="category.background">
+      <category *ngFor="let category of categories" (click)="scrollTo(category.id)" [marginLeft]="category.marginLeft"
+        [background]="category.background">
         <div class="category-text">{{category.name}}</div>
       </category>
     </div>
@@ -61,9 +57,9 @@
       (hitTop)="scrollTo(windows[3].above)">
       <networking></networking>>
     </window>
-    <window [id]="windows[4].id" [view]="windows[4].inView" name="GraphicDesign"
-      backgroundClass="brown-background" borderColor="#6D491C" [scrolling]="windows[4].scrolling"
-      (hitBottom)="scrollTo(windows[4].below)" (hitTop)="scrollTo(windows[4].above)">
+    <window [id]="windows[4].id" [view]="windows[4].inView" name="GraphicDesign" backgroundClass="brown-background"
+      borderColor="#6D491C" [scrolling]="windows[4].scrolling" (hitBottom)="scrollTo(windows[4].below)"
+      (hitTop)="scrollTo(windows[4].above)">
       <web-design></web-design>
     </window>
     <window [id]="windows[5].id" [view]="windows[5].inView" name="WebDevelopment" backgroundClass="pastelle-background"
