@@ -12,6 +12,7 @@ import { WindowCardComponent } from './window-card/window-card.component';
 
 import { CarouselComponent } from './carousel/carousel.component';
 import { PlayOnViewportDirective } from './play-on-viewport.directive';
+import { NetworkingComponent } from './networking/networking.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PlayOnViewportDirective } from './play-on-viewport.directive';
     WindowCardComponent,
     CarouselComponent,
     PlayOnViewportDirective,
+    NetworkingComponent,
   ],
   exports: [
     WebDesignComponent,
@@ -34,6 +36,7 @@ import { PlayOnViewportDirective } from './play-on-viewport.directive';
     GraphicsEngineComponent,
     MultimediaComponent,
     WindowCardComponent,
+    NetworkingComponent,
   ],
   imports: [
     CommonModule,

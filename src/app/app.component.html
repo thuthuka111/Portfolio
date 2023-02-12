@@ -56,19 +56,24 @@
       (hitTop)="scrollTo(windows[2].above)">
       <graphics-engine></graphics-engine>
     </window>
-    <window [id]="windows[3].id" [view]="windows[3].inView" name="GraphicDesign"
-      backgroundClass="brown-background" borderColor="#6D391C" [scrolling]="windows[3].scrolling"
-      (hitBottom)="scrollTo(windows[3].below)" (hitTop)="scrollTo(windows[3].above)">
+    <window [id]="windows[3].id" [view]="windows[3].inView" name="Networking" backgroundClass="blue-wavy-background"
+      borderColor="rgb(95 195 199)" [scrolling]="windows[3].scrolling" (hitBottom)="scrollTo(windows[3].below)"
+      (hitTop)="scrollTo(windows[3].above)">
+      <networking></networking>>
+    </window>
+    <window [id]="windows[4].id" [view]="windows[4].inView" name="GraphicDesign"
+      backgroundClass="brown-background" borderColor="#6D491C" [scrolling]="windows[4].scrolling"
+      (hitBottom)="scrollTo(windows[4].below)" (hitTop)="scrollTo(windows[4].above)">
       <web-design></web-design>
     </window>
-    <window [id]="windows[4].id" [view]="windows[4].inView" name="WebDevelopment" backgroundClass="pastelle-background"
-      borderColor="#B5E9F9" [scrolling]="windows[4].scrolling" (hitBottom)="scrollTo(windows[4].below)"
-      (hitTop)="scrollTo(windows[4].above)">
+    <window [id]="windows[5].id" [view]="windows[5].inView" name="WebDevelopment" backgroundClass="pastelle-background"
+      borderColor="#B5E9F9" [scrolling]="windows[5].scrolling" (hitBottom)="scrollTo(windows[5].below)"
+      (hitTop)="scrollTo(windows[5].above)">
       <graphic-design></graphic-design>
     </window>
-    <window [id]="windows[5].id" [view]="windows[5].inView" name="Multimedia" backgroundClass="grid-background"
-      borderColor="#D50EAA" [scrolling]="windows[5].scrolling" (hitBottom)="scrollTo(windows[5].below)"
-      (hitTop)="scrollTo(windows[5].above)">
+    <window [id]="windows[6].id" [view]="windows[6].inView" name="Multimedia" backgroundClass="grid-background"
+      borderColor="#D60EAA" [scrolling]="windows[6].scrolling" (hitBottom)="scrollTo(windows[6].below)"
+      (hitTop)="scrollTo(windows[6].above)">
       <multimedia></multimedia>
     </window>
   </div>
