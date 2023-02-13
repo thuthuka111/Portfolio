@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ModalContainerComponent } from './modal-container/modal-container.component';
+import { WindowService, Window } from './window.service';
 
 @Component({
   selector: 'app-root',
@@ -12,31 +13,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   showContactModal = false;
 
   windowInView = 'prewindow';
-  windows = [
-    { name: 'home', inView: true, scrolling: true, id: "prewindow", below: '', above: '' },
-    { name: 'Web Development', inView: false, scrolling: false, id: "webDevWindow", marginLeft: '', below: '', background: 'radial-gradient(#9199A1, #5B6164)', above: '' },
-    { name: "Computer Graphics", inView: false, scrolling: false, id: "computerGraphicsWindow", marginLeft: '-20%', below: '', background: 'radial-gradient(#56B560, #232623)', above: '' },
-    { name: "Networking", inView: false, scrolling: false, id: "networkingWindow", marginLeft: '-27%', below: '', background: 'radial-gradient(#1c8db3, #2e3ca1)', above: '' },
-    { name: 'Web Design', inView: false, scrolling: false, id: "wedDesignWindow", marginLeft: '-16%', background: 'radial-gradient(#B2876E, #9C5323)', below: '', above: '' },
-    { name: 'Graphic Design', inView: false, scrolling: false, id: "graphicDesignWindow", marginLeft: '-27%', background: 'radial-gradient(#d6eef6, #e5d7f4)', below: '', above: '' },
-    { name: 'Multimedia', inView: false, scrolling: false, id: "multimediaWindow", marginLeft: '-20%', background: 'radial-gradient(rgb(94 178 115), #d83eb7)', below: '', above: '' },
-  ];
-  currentWindow: number = 0;
-  categories = this.windows.slice(1);
-  windowMap = new Map();
+  homeBodyScroling = true;
+  windows: Window[] = [];
+  windowMap = new Map<string, Window>();
 
   inScrollingMotion = false;
 
-  constructor() {
-    for (let i = 1; i < this.windows.length; i++) {
-      this.windows[i].above = this.windows[i - 1].id;
-      this.windows[i].below = this.windows[(i + 1) % this.windows.length].id;
-    }
-
-    for (let i = 0; i < this.windows.length; i++) {
-      this.windowMap.set(this.windows[i].id, i);
-    }
-
+  constructor(private windowService: WindowService) {
     $.extend($.easing, {//commment out for offline working
       easeInOutQuint: function (x, t, b, c, d) {
         if ((t /= d / 2) < 1) return c / 2 * t * t * t * t * t + b;
@@ -46,7 +29,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-
+    this.windows = this.windowService.getWindows();
+    this.windows.forEach((window) => {
+      this.windowMap.set(window.id, window);
+    });
   }
 
   ngAfterViewInit(): void {
@@ -55,7 +41,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.fakeBody.addEventListener("scroll", () => { // disabled because the property isnt the right height when rendering
       if (!this.inScrollingMotion && this.windowInView == 'prewindow' && this.fakeBody.scrollTop + window.innerHeight >= prewindowScrollHeight) {
-        this.scrollTo(this.windows[1].id);
+        this.scrollTo(this.windows[0].id);// map
       }
     });
   }
@@ -67,10 +53,14 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.inScrollingMotion = true;
 
       // set the current window to notInView
-      this.windows[this.windowMap.get(this.windowInView)].inView = false;
-      this.windows[this.windowMap.get(this.windowInView)].scrolling = false;
+      if (this.windowInView == 'prewindow') {
+        this.homeBodyScroling = false;
+      } else {
+        this.windowMap.get(this.windowInView).inView = false;
+        this.windowMap.get(this.windowInView).scrolling = false;
+      }
       // for good timings
-      let windowJump: number = Math.min(2, Math.abs(this.windowMap.get(section) - this.currentWindow));
+      let windowJump: number = Math.min(2, Math.abs(this.windows.indexOf(this.windowMap.get(section)) - this.windows.indexOf(this.windowMap.get(this.windowInView))));
 
       setTimeout(() => {// allow window to collapse
         $('#fakeBody').animate({
@@ -83,10 +73,13 @@ export class AppComponent implements OnInit, AfterViewInit {
           console.log("entering " + section);
 
           // set the current window to inView
-          this.windows[this.windowMap.get(section)].inView = true;
-          this.windows[this.windowMap.get(section)].scrolling = true;
-          this.currentWindow = this.windowMap.get(section);
-
+          if (section == 'prewindow') {
+            this.homeBodyScroling = true;
+          } else {
+            this.windowMap.get(section).inView = true;
+            this.windowMap.get(section).scrolling = true;
+          }
+          // this.currentWindow = this.windowMap.get(section);
         }, (windowJump * 700) - 350);
       }, 200);
 

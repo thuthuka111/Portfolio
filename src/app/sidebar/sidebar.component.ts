@@ -7,6 +7,7 @@ import {
   transition,
   keyframes,
 } from '@angular/animations';
+import { Window } from '../window.service';
 
 @Component({
   selector: 'sidebar',
@@ -51,7 +52,7 @@ import {
   ]
 })
 export class SidebarComponent implements OnInit {
-  @Input() windows: Array<{ name: string, inView: boolean, scrolling: boolean }> = [];
+  @Input() windows: Array<Window> = [];
 
   @Output() scrollToSection = new EventEmitter<string>();
 

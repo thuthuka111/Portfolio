@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import {
   trigger,
   state,
@@ -9,6 +9,8 @@ import {
   query,
   animateChild,
 } from '@angular/animations';
+import { Window, WindowComponent } from '../window.service';
+import { WindowDirective } from '../window.directive';
 
 @Component({
   selector: 'window',
@@ -72,12 +74,10 @@ import {
     ]),
   ]
 })
-export class WindowComponent implements AfterViewInit {
-  @Input('view') isInView: boolean;// make string that can be 4 things
-  @Input() name: string
-  @Input() backgroundClass: string;
-  @Input() borderColor: string;
-  @Input() scrolling: boolean = false;
+export class WindowHostComponent implements OnInit, AfterViewInit {
+  @Input() window: Window;
+
+  @ViewChild(WindowDirective, {static: true}) windowHost!: WindowDirective;
 
   @Output() hitTop = new EventEmitter<void>();
   @Output() hitBottom = new EventEmitter<void>();
@@ -90,8 +90,16 @@ export class WindowComponent implements AfterViewInit {
 
   constructor() { }
 
+  ngOnInit(): void {
+    const viewContainerRef = this.windowHost.viewContainerRef; // reference to the container i guess
+    viewContainerRef.clear();
+
+    // componentRef can be used to change the data of the Component
+    const componentRef = viewContainerRef.createComponent(this.window.component.component);
+  }
+
   ngAfterViewInit(): void {
-    let eventElement = document.getElementById(`${this.name}-container`);
+    let eventElement = document.getElementById(`${this.window.name}-container`);
     let timer;
     let thissy = this;
 
@@ -118,7 +126,7 @@ export class WindowComponent implements AfterViewInit {
   }
 
   stateChange(): void {
-    if (this.isInView) {
+    if (this.window.inView) {
       this.contentState = "inView";
     } else {
       this.stateSet = true;

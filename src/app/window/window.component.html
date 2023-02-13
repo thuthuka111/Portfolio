@@ -1,6 +1,6 @@
-<div [@isInView]="isInView ? 'inView' : 'notInView'" class="window-container" (@isInView.start)="stateChange()">
-    <div class="fake-border" [style]="'background-color: ' + borderColor + ';'"></div>
-    <div [class]="'window-content container ' + backgroundClass">
+<div [@isInView]="window.inView? 'inView' : 'notInView'" class="window-container" (@isInView.start)="stateChange()">
+    <div class="fake-border" [style]="'background-color: ' + window.borderColor + ';'"></div>
+    <div [class]="'window-content container ' + window.backgroundClass">
         <div [@navigatePrompt]="topButtonState" class="move-prompt top-prompt" (click)="goUp()">
             <img src="../../assets/svgs/expand_less_FILL0_wght400_GRAD0_opsz48.svg" />
         </div>
@@ -8,8 +8,8 @@
             <img src="../../assets/svgs/expand_more_FILL0_wght400_GRAD0_opsz48.svg" />
         </div>
     </div>
-    <div [id]="name + '-container'" [@content]="contentState"
-        [class]="'window-content container ' + (scrolling ? '' : ' disable-scrolling')">
-        <ng-content></ng-content>
+    <div [id]="window.name + '-container'" [@content]="contentState"
+        [class]="'window-content container ' + (window.scrolling ? '' : ' disable-scrolling')">
+        <ng-template windowHost></ng-template>
     </div>
 </div>

@@ -153,56 +153,6 @@ window {
     justify-content: center;
 }
 
-web-design {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 83%;
-    gap: 5.3rem;
-    padding-bottom: 8rem;
-    color: white;
-}
-
-graphic-design {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 83%;
-    gap: 5.3rem;
-    padding-bottom: 8rem;
-}
-
-web-dev {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 83%;
-    gap: 1.6rem;
-    padding-bottom: 8rem;
-    color: white;
-}
-
-graphics-engine {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 83%;
-    gap: 1.6rem;
-    padding-bottom: 8rem;
-    color: white;
-}
-
-networking {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 83%;
-    gap: 1.6rem;
-    padding-bottom: 8rem;
-    color: white;
-}
-
-
 .contact-box {
     display: flex;
     flex-direction: column;
@@ -285,7 +235,7 @@ networking {
         font-size: 11pt;
         padding: 0% 5%;
     }
-    
+
     .category-text {
         font-size: 26pt;
     }
@@ -303,7 +253,7 @@ networking {
     .contact-method>#name {
         font-size: 20pt;
     }
-    
+
     .contact-method>#value {
         font-size: 14pt;
     }

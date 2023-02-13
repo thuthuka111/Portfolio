@@ -1,12 +1,14 @@
 <div class="sidebar-container">
   <div class="sidebar">
+    <div>
+      <div class="bar">
+        <div (click)="scrollTo({id: 'prewindow'})"></div>
+      </div>
+    </div>
     <div *ngFor="let window of windows">
       <div [@isExtended]="window.inView ? 'extended' : 'collapsed'" class="bar">
-        <div (click)="scrollTo(window)" [@backgroundColour]="theme" ></div>
+        <div (click)="scrollTo(window)" [@backgroundColour]="theme"></div>
       </div>
-      <!-- <div @textDisplayed *ngIf="window.inView" class="bar-text">
-        <p>{{window.name}}</p>
-      </div> -->
     </div>
   </div>
 </div>

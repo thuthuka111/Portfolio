@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { WindowComponent } from './window.component';
+import { WindowHostComponent } from './window.component';
 
 describe('WindowComponent', () => {
-  let component: WindowComponent;
-  let fixture: ComponentFixture<WindowComponent>;
+  let component: WindowHostComponent;
+  let fixture: ComponentFixture<WindowHostComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ WindowComponent ]
+      declarations: [ WindowHostComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WindowComponent);
+    fixture = TestBed.createComponent(WindowHostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
