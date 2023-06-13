@@ -1,14 +1,38 @@
 <fullscreen-viewer></fullscreen-viewer>
-<sidebar id="sidebar" [windows]="windows" (scrollToSection)="scrollTo($event)"></sidebar>
+<sidebar
+  id="sidebar"
+  [windows]="windows"
+  (scrollToSection)="scrollTo($event)"
+></sidebar>
 <div class="topbar">
-  <div>
-    <p>THUTHUKA KHUMALO</p>
-    <p (click)="toggleContactModal()" style="cursor: pointer;">CONTACT</p>
+  <div class="flex-row align-center">
+    <p style="text-align: center">THUTHUKA KHUMALO</p>
+    <div class="flex-row align-center" style="height: 45px; gap: 1.2rem">
+      <img
+        src="../assets/logos/GitHub_logo.png"
+        alt="github"
+        height="36px"
+        style="cursor: pointer"
+        (click)="openLink('https://github.com/thuthuka111')"
+      />
+      <img
+        src="assets/logos/linkedIn_logo.png"
+        alt="linkedin"
+        height="32px"
+        style="cursor: pointer"
+        (click)="
+          openLink('https://www.linkedin.com/in/thuthuka-khumalo-95a63b1a4/')
+        "
+      />
+      <p (click)="toggleContactModal()" style="cursor: pointer">CONTACT</p>
+    </div>
   </div>
 </div>
 
-<div id="fakeBody" [class]="'fake-body' + (homeBodyScroling ? '' : ' disable-scrolling')">
-
+<div
+  id="fakeBody"
+  [class]="'fake-body' + (homeBodyScroling ? '' : ' disable-scrolling')"
+>
   <div id="prewindow">
     <div class="home-container">
       <div class="leftside">
@@ -18,9 +42,13 @@
         <p>THUTHUKA KHUMALO</p>
       </div>
       <div class="rightside">
-        <p>I am a Software developer with experience in the design and deployement of cloud applications</p>
-        <p>When Designing a product, before any code is written I first make a design
-          of the product, be that the architecture or the UI/UX.
+        <p>
+          I am a Software developer with experience in the design and
+          deployement of cloud applications
+        </p>
+        <p>
+          When Designing a product, before any code is written I first make a
+          design of the product, be that the architecture or the UI/UX.
         </p>
         <p>Below is a list of the project categories I have experience with</p>
         <div class="more-below-containter">
@@ -34,28 +62,42 @@
     </div>
 
     <div class="categories" id="categories">
-      <category *ngFor="let category of windows" (click)="scrollTo(category.id)" [marginLeft]="category.marginLeft"
-        [background]="category.background">
-        <div class="category-text">{{category.name}}</div>
+      <category
+        *ngFor="let category of windows"
+        (click)="scrollTo(category.id)"
+        [marginLeft]="category.marginLeft"
+        [background]="category.background"
+      >
+        <div class="category-text">{{ category.name }}</div>
       </category>
     </div>
   </div>
 
   <div class="windows" id="windows">
-    <window *ngFor="let window of windows" [window]="window" [id]="window.id" (hitTop)="scrollTo(window.above)"
-      (hitBottom)="scrollTo(window.below)">
+    <window
+      *ngFor="let window of windows"
+      [window]="window"
+      [id]="window.id"
+      (hitTop)="scrollTo(window.above)"
+      (hitBottom)="scrollTo(window.below)"
+    >
     </window>
   </div>
-
 </div>
-<modal-container id="contactModal" [modalDisplay]="showContactModal" (close)="toggleContactModal()">
+<modal-container
+  id="contactModal"
+  [modalDisplay]="showContactModal"
+  (close)="toggleContactModal()"
+>
   <div class="contact-box">
     <div class="contact-method">
-      <p id="name">EMAIL: </p>
-      <a id="value" href="mailto:thuthuka111@gmail.com">thuthuka111@gmail.com</a>
+      <p id="name">EMAIL:</p>
+      <a id="value" href="mailto:thuthuka111@gmail.com"
+        >thuthuka111@gmail.com</a
+      >
     </div>
     <div class="contact-method">
-      <p id="name">PHONE: </p>
+      <p id="name">PHONE:</p>
       <p id="value">063 874 1990</p>
     </div>
   </div>

@@ -102,4 +102,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
+  openLink(link: string): void {
+    window.open(link, "_blank");
+  }
+
 }
