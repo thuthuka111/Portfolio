@@ -6,9 +6,7 @@ on:
 jobs:
   deploy-app:
     name: App Deployment
-    needs: ci-workflow
     runs-on: ubuntu-latest
-    environment: Development  
     
     steps:
     - name: Checkout Repo
