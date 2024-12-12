@@ -13,6 +13,6 @@ export class GraphicsEngineComponent implements OnInit {
   }
 
   openClassDiagram(): void {
-    window.open('../../../assets/images/Custom-Engine\ UML.svg', '_blank');
+    window.open('assets/images/Custom-Engine\ UML.svg', '_blank');
   }
 }

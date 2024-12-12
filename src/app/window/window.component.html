@@ -2,10 +2,10 @@
     <div class="fake-border" [style]="'background-color: ' + window.borderColor + ';'"></div>
     <div [class]="'window-content container ' + window.backgroundClass">
         <div [@navigatePrompt]="topButtonState" class="move-prompt top-prompt" (click)="goUp()">
-            <img src="../../assets/svgs/expand_less_FILL0_wght400_GRAD0_opsz48.svg" />
+            <img src="assets/svgs/expand_less_FILL0_wght400_GRAD0_opsz48.svg" />
         </div>
         <div [@navigatePrompt]="bottomButtonState" class="move-prompt bottom-prompt" (click)="goDown()">
-            <img src="../../assets/svgs/expand_more_FILL0_wght400_GRAD0_opsz48.svg" />
+            <img src="assets/svgs/expand_more_FILL0_wght400_GRAD0_opsz48.svg" />
         </div>
     </div>
     <div [id]="window.name + '-container'" [@content]="contentState"

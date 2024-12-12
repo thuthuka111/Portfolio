@@ -10,7 +10,7 @@ export class WebDevComponent implements OnInit {
     {
       name: 'Javascript',
       experience: '4 Years',
-      icon: '../../../assets/logos/JS_logo.png',
+      icon: 'assets/logos/JS_logo.png',
       barPercent: 77
     }, {
       name: 'HTML & CSS',
