@@ -29,11 +29,6 @@ jobs:
     - name: Build App
       run: npm run actions:build:prod
 
-    - name: Print current working directory
-      run: |
-        pwd
-        ls -al dist/portfolio
-
     - name: Upload Build Artifacts
       uses: actions/upload-pages-artifact@v3
       with:
