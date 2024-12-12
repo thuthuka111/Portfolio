@@ -42,27 +42,27 @@
 }
 
 .brown-background {
-    background-image: url(/assets/images/Noisy-Gradient.png);
+    background-image: url(~src/assets/images/Noisy-Gradient.png);
 }
 
 .pastelle-background {
-    background-image: url(/assets/images/Pastelle-Noisy-Gradient.png);
+    background-image: url(~src/assets/images/Pastelle-Noisy-Gradient.png);
 }
 
 .grey-background {
-    background-image: url(/assets/images/Grey-Noisy-Gradient.png);
+    background-image: url(~src/assets/images/Grey-Noisy-Gradient.png);
 }
 
 .black-background {
-    background-image: url(/assets/images/Hacker-Black.png);
+    background-image: url(~src/assets/images/Hacker-Black.png);
 }
 
 .grid-background {
-    background-image: url(/assets/images/green-grid-background.png);
+    background-image: url(~src/assets/images/green-grid-background.png);
 }
 
 .blue-wavy-background {
-    background-image: url(/assets/images/Blue-Wavy-Background.png);
+    background-image: url(~src/assets/images/Blue-Wavy-Background.png);
 }
 
 .move-prompt {
