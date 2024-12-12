@@ -6,12 +6,16 @@ on:
       - master
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v5
 
     - name: Setup NodeJS and Cache
       uses: actions/setup-node@v3
@@ -30,8 +34,18 @@ jobs:
         pwd
         ls -al dist/portfolio
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
+    - name: Upload Build Artifacts
+      uses: actions/upload-pages-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/portfolio
+        path: ./dist/portfolio
+        
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v4
