@@ -11,10 +11,10 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "baseHref": "https://thuthuka111.github.io/Portfolio/",
           "defaultConfiguration": "development",
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "https://thuthuka111.github.io/Portfolio/",
             "outputPath": "dist/portfolio",
             "index": "src/index.html",
             "main": "src/main.ts",
